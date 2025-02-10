@@ -38,7 +38,7 @@ export default function Home() {
         stagger: 0.05,
         scrollTrigger: {
           trigger: mainRef.current,
-          start: 'top 50%',
+          start: 'top 70%',
           end: 'bottom bottom+90vh',
           scrub: true,
         },
