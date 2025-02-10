@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/x-icon" href="/logo.ico" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
         {children}
       </body>
