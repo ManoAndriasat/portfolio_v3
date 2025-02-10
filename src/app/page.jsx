@@ -209,7 +209,7 @@ export default function Home() {
 
   return (
     <>
-      <div ref={secondHeaderRef} className="second-header w-full flex justify-center fixed bottom-0 left-0 right-0 z-50 mb-4 opacity-1 hidden lg:flex">
+      <div ref={secondHeaderRef} className="second-header w-full flex justify-center fixed bottom-0 left-0 right-0 z-50 mb-4 opacity-1 hidden lg:flex overflow-x-hidden">
         <div className="flex items-center">
           <span className="second-logo p-3 bg-[#f9f9f9]">
             <Image src="/logo.png" width={70} height={70} alt="logo" />
