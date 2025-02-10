@@ -1,18 +1,17 @@
 'use client';
 import './style/style.css';
 import Image from 'next/image';
-import React, { useState, useRef, useEffect, use } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FaBars, FaArrowDown, FaExternalLinkAlt, FaLinkedin, FaLongArrowAltRight } from 'react-icons/fa';
 import { FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
 import { gsap } from 'gsap';
 import 'tailwindcss/tailwind.css';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Splitting from "splitting";
-import Lenis from "@studio-freight/lenis";
 import ModifMarquee from "./components/Marquee";
 import Cards from './data';
 import ModifHr from './components/ModifHr';
 import SuperposedMarquee from './components/SuperposedMarquee';
+import 'splitting/dist/splitting.css';
 
 
 export default function Home() {
@@ -24,154 +23,117 @@ export default function Home() {
   const secondHeaderRef = useRef(null);
   const contact = useRef(null);
   const contactInformation = useRef(null);
+  const landingRef = useRef(null);
 
   const handleMouseEnter = () => setIsOpen(true);
   const handleMouseLeave = () => setIsOpen(false);
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.5,
-      easing: (t) => 1 - Math.pow(1 - t, 4),
-      smooth: true,
-      smoothTouch: true,
-    });
-
-    const raf = (time) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
-
-    return () => lenis.destroy();
-  }, []);
 
 
   useEffect(() => {
-    if (textRef.current) {
-      const results = Splitting({ target: textRef.current, by: 'chars' });
-      const chars = results[0].chars;
-      gsap.from(chars, {
-        opacity: 0,
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: 'top 50%',
-          end: 'bottom bottom+90vh',
-          scrub: true,
-        },
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    if (annonceRef.current) {
-      gsap.from(annonceRef.current, {
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: 'top 50%',
-          end: 'top 40%',
-          scrub: true,
-        },
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    gsap.from(aboutTitleRef.current, {
-      opacity: 0,
-      duration: 1,
-      y: '-50px',
-      scrollTrigger: {
-        trigger: mainRef.current,
-        start: 'top 50%',
-        end: 'top 40%',
-        scrub: true,
-      },
-    });
-  }, []);
+    import('gsap').then((gsapModule) => {
+      const gsap = gsapModule.default;
+      import('gsap/ScrollTrigger').then((ScrollTriggerModule) => {
+        const ScrollTrigger = ScrollTriggerModule.default;
+        gsap.registerPlugin(ScrollTrigger);
 
 
-  useEffect(() => {
-    if (mainRef.current) {
-      gsap.to(mainRef.current, {
-        y: '-100vh',
-        scrollTrigger: {
-          trigger: '.landing',
-          start: 'top top',
-          end: 'bottom top',
-          pin: true,
-          scrub: true,
-        },
-      });
-    }
-  }, []);
-
-
-  useEffect(() => {
-    if (secondHeaderRef.current) {
-      gsap.from(secondHeaderRef.current, {
-        opacity: 0,
-        y: '200px',
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: 'top bottom',
-          end: 'top bottom',
-          onEnter: () => gsap.to(secondHeaderRef.current, { opacity: 1 }),
-          onLeaveBack: () => gsap.to(secondHeaderRef.current, { opacity: 0 }),
-        },
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    const workDetails = document.querySelectorAll(".work-details");
-
-    workDetails.forEach((work, index) => {
-      const workContent = work.querySelector(`.work-content-${index}`);
-      const workTitle = work.querySelector(`.work-title-${index}`);
-
-      ScrollTrigger.create({
-        trigger: work,
-        start: `top ${350}px`,
-        end: `bottom top`,
-        onEnter: () => {
-          gsap.to(workContent, { opacity: 1, display: "block", duration: 0 });
-          gsap.to(workTitle, { color: "black", duration: 0 }); // Highlight title
-          gsap.to(work, { backgroundColor: "#f9f9f9", color: "black", duration: 0 });
-
-          workDetails.forEach((otherWork, otherIndex) => {
-            if (otherIndex !== index) {
-              const otherContent = otherWork.querySelector(`.work-content-${otherIndex}`);
-              const otherTitle = otherWork.querySelector(`.work-title-${otherIndex}`);
-              gsap.to(otherContent, { opacity: 0, display: "none", duration: 0 });
-              gsap.to(otherTitle, { color: "#f9f9f9", duration: 0 }); // Reset title color
-              gsap.to(otherWork, { backgroundColor: "black", color: "#f9f9f9", duration: 0 });
-            }
+        if (annonceRef.current) {
+          gsap.from(annonceRef.current, {
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: mainRef.current,
+              start: 'top 50%',
+              end: 'top 40%',
+              scrub: true,
+            },
           });
-        },
-        onLeaveBack: () => {
-          gsap.to(workContent, { opacity: 0, display: "none", duration: 0 });
-          gsap.to(workTitle, { color: "#f9f9f9", duration: 0 }); // Reset title color
-          gsap.to(work, { backgroundColor: "black", color: "#f9f9f9", duration: 0 });
+        }
 
-          if (index > 0) {
-            const prevContent = workDetails[index - 1].querySelector(`.work-content-${index - 1}`);
-            const prevTitle = workDetails[index - 1].querySelector(`.work-title-${index - 1}`);
-            gsap.to(prevContent, { opacity: 1, display: "block", duration: 0 });
-            gsap.to(prevTitle, { color: "black", duration: 0 }); // Highlight previous title
-            gsap.to(workDetails[index - 1], { backgroundColor: "#f9f9f9", color: "black", duration: 0 });
-          }
-        },
+        if (aboutTitleRef.current) {
+          gsap.from(aboutTitleRef.current, {
+            opacity: 0,
+            duration: 1,
+            y: '-50px',
+            scrollTrigger: {
+              trigger: mainRef.current,
+              start: 'top 50%',
+              end: 'top 40%',
+              scrub: true,
+            },
+          });
+        }
+
+        if (mainRef.current) {
+          gsap.to(mainRef.current, {
+            y: '-100vh',
+            scrollTrigger: {
+              trigger: landingRef.current,
+              start: 'top top',
+              end: 'bottom top',
+              pin: true,
+              scrub: true,
+            },
+          });
+        }
+
+
+          import('splitting').then((SplittingModule) => {
+            const Splitting = SplittingModule.default;
+            const results = Splitting({ target: textRef.current, by: 'chars' });
+      
+            // Ensure chars are available before continuing
+            if (results && results[0] && results[0].chars) {
+              const chars = results[0].chars;
+              
+              gsap.from(chars, {
+                opacity: 0,
+                stagger: 0.05,
+                scrollTrigger: {
+                  trigger: mainRef.current,
+                  start: 'top 50%',
+                  end: 'bottom bottom+90vh',
+                  scrub: true,
+                },
+              });
+            } else {
+              console.warn("Splitting characters not available");
+            }
+          }).catch((error) => {
+            console.error('Error loading Splitting:', error);
+          });
+
+        if (secondHeaderRef.current) {
+          gsap.from(secondHeaderRef.current, {
+            opacity: 0,
+            y: '200px',
+            scrollTrigger: {
+              trigger: mainRef.current,
+              start: 'top bottom',
+              end: 'top bottom',
+              onEnter: () => gsap.to(secondHeaderRef.current, { opacity: 1 }),
+              onLeaveBack: () => gsap.to(secondHeaderRef.current, { opacity: 0 }),
+            },
+          });
+        }
+
+        if (contactInformation.current) {
+          gsap.to(contactInformation.current, {
+            y: '-30vh',
+            scrollTrigger: {
+              trigger: contact.current,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true,
+              pin: true,
+              markers: true,
+            },
+          });
+        }
       });
     });
-  }, [Cards]);
 
-  useEffect(() => {
     gsap.to(contactInformation.current, {
       y: '-30vh',
       scrollTrigger: {
@@ -183,7 +145,78 @@ export default function Home() {
         markers: true,
       },
     });
+
+    import('@studio-freight/lenis').then((LenisModule) => {
+      const Lenis = LenisModule.default;
+      const lenis = new Lenis({
+        duration: 1.5,
+        easing: (t) => 1 - Math.pow(1 - t, 4),
+        smooth: true,
+        smoothTouch: true,
+      });
+      const raf = (time) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
+      requestAnimationFrame(raf);
+      return () => lenis.destroy();
+    });
   }, []);
+
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && document) {
+      gsap.registerPlugin(ScrollTrigger);
+      const workDetails = document.querySelectorAll(".work-details");
+
+      workDetails.forEach((work, index) => {
+        const workContent = work.querySelector(`.work-content-${index}`);
+        const workTitle = work.querySelector(`.work-title-${index}`);
+
+        import('gsap').then((gsapModule) => {
+          const gsap = gsapModule.default;
+          import('gsap/ScrollTrigger').then((ScrollTriggerModule) => {
+            const ScrollTrigger = ScrollTriggerModule.default;
+            gsap.registerPlugin(ScrollTrigger);
+
+            ScrollTrigger.create({
+              trigger: work,
+              start: `top ${350}px`,
+              end: `bottom top`,
+              onEnter: () => {
+                gsap.to(workContent, { opacity: 1, display: "block", duration: 0 });
+                gsap.to(workTitle, { color: "black", duration: 0 });
+                gsap.to(work, { backgroundColor: "#f9f9f9", color: "black", duration: 0 });
+
+                workDetails.forEach((otherWork, otherIndex) => {
+                  if (otherIndex !== index) {
+                    const otherContent = otherWork.querySelector(`.work-content-${otherIndex}`);
+                    const otherTitle = otherWork.querySelector(`.work-title-${otherIndex}`);
+                    gsap.to(otherContent, { opacity: 0, display: "none", duration: 0 });
+                    gsap.to(otherTitle, { color: "#f9f9f9", duration: 0 });
+                    gsap.to(otherWork, { backgroundColor: "black", color: "#f9f9f9", duration: 0 });
+                  }
+                });
+              },
+              onLeaveBack: () => {
+                gsap.to(workContent, { opacity: 0, display: "none", duration: 0 });
+                gsap.to(workTitle, { color: "#f9f9f9", duration: 0 });
+                gsap.to(work, { backgroundColor: "black", color: "#f9f9f9", duration: 0 });
+
+                if (index > 0) {
+                  const prevContent = workDetails[index - 1].querySelector(`.work-content-${index - 1}`);
+                  const prevTitle = workDetails[index - 1].querySelector(`.work-title-${index - 1}`);
+                  gsap.to(prevContent, { opacity: 1, display: "block", duration: 0 });
+                  gsap.to(prevTitle, { color: "black", duration: 0 });
+                  gsap.to(workDetails[index - 1], { backgroundColor: "#f9f9f9", color: "black", duration: 0 });
+                }
+              },
+            });
+          });
+        });
+      });
+    }
+  }, [Cards]);
 
   return (
     <>
@@ -207,7 +240,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='landing text-[#f9f9f9]'>
+      <div className='landing text-[#f9f9f9]' ref={landingRef}>
         <div className="header w-full flex justify-between items-center">
           <span className='logo p-3 bg-[#f9f9f9]'>
             <Image src="/logo.png" width={70} height={70} alt='logo' />
@@ -280,6 +313,9 @@ export default function Home() {
               </div>
             </div>
           ))}
+          <div key={Cards.length} className={`work-details work-${Cards.length} flex items-center`}>
+
+          </div>
         </div>
       </div>
 
@@ -303,7 +339,7 @@ export default function Home() {
       </div>
 
       <div ref={contactInformation} className="contact-information w-full h-0 border-none">
-        <footer className="bg-[#f9f9f9] text-black h-content border-none">
+        <footer className="bg-[#f9f9f9] text-black h-[50vh] border-none">
           <div className='flex justify-between items-center w-full border-none'>
             <div className="left bg-black p-[40px] border-none rounded-br-[20px] hidden lg:inline"></div>
             <div className='flex justify-between items-center'>
@@ -337,7 +373,7 @@ export default function Home() {
                   <FaLongArrowAltRight className='text-[35px]' />
                 </li>
                 <li>
-                <a href="mailto:ma.andriasat@gmail.com" className="font-extrabold text-[20px]">ma.andriasat@gmail.com</a>
+                  <a href="mailto:ma.andriasat@gmail.com" className="font-extrabold text-[20px]">ma.andriasat@gmail.com</a>
                 </li>
               </ul>
             </div>
