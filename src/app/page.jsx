@@ -38,7 +38,7 @@ export default function Home() {
         stagger: 0.05,
         scrollTrigger: {
           trigger: mainRef.current,
-          start: 'top 70%',
+          start: 'top 50%',
           end: 'bottom bottom+90vh',
           scrub: true,
         },
@@ -142,6 +142,7 @@ export default function Home() {
         duration: 1.5,
         easing: (t) => 1 - Math.pow(1 - t, 4),
         smooth: true,
+        smoothTouch: true,
       });
       const raf = (time) => {
         lenis.raf(time);
@@ -287,8 +288,8 @@ export default function Home() {
                 <a href={`${card.link}`} target='blank' className='text-decoration-[none] text-[20px] lg:text-[25px]'> <FaExternalLinkAlt /></a>
               </div>
               <div>
-                <h1 className={`work-title work-title-${index} text-[20px] lg:text-[40px]`}>{card.title}</h1>
-                <div className={`work-content work-content-${index} text-[14px] lg:text-[30px] gap-5 p-5`}>
+                <h1 className={`work-title work-title-${index} text-[25px] lg:text-[40px]`}>{card.title}</h1>
+                <div className={`work-content work-content-${index} text-[18px] lg:text-[30px] gap-5 p-5`}>
                   <p>{card.description}</p>
                   <ul>
                     <li>
