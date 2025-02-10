@@ -1,0 +1,308 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+}
+
+@font-face {
+    font-family: 'agatho';
+    src: url('agatho/Agatho_\ Light.otf');
+}
+
+@font-face {
+    font-family: 'bamboy';
+    src: url('bamboy/BamboyTrial-Regular.otf');
+  }
+
+@font-face {
+    font-family: 'pincoyablack';
+    src: url('pincoyablack/pincoyablack.otf');
+}
+
+.landing{
+    background-image: url('/bg.png');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.about{
+    background-image: url('/bg-2.png');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.foot{
+    position: absolute;
+    display: inline;
+    bottom: 50;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border: 1px solid #f9f9f9;
+    padding: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.simple-word{
+    font-family: 'agatho';
+    color: #f9f9f9;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+
+.foot .year{
+    border-left: 1px solid #f9f9f9;
+}
+
+.header{
+  text-transform: uppercase;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Button styling */
+  .dropdown-button {
+    background-color: #8cef0b;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    font-size: 35px;
+    width: 95px;
+    height: 95px;
+    border: 1px solid #262626;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Dropdown menu */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Position the menu below the button */
+    left: 0;
+    background-color: #f9f9f9;
+    border-right: 1px solid #262626;
+    width: 95px;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden; /* Ensure the dropdown doesn't overflow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  /* Dropdown menu list */
+  .dropdown-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .dropdown-menu li {
+    padding: 15px;
+    color: #000000;
+    cursor: pointer;
+    width: 100%; /* Ensure each option takes full width */
+    text-align: center; /* Center the text inside each option */
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #55555581;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.annonce{
+  font-family: 'agatho';
+
+}
+
+.image-1{
+  width: 0%;
+}
+
+.me hr{
+  border:1px solid #f9f9f9;
+  background-color: #f9f9f9;
+}
+.annonce hr{
+  border:1px solid black;
+  background-color: black;
+}
+.work hr{
+  border:1px solid #f9f9f9;
+  background-color: #f9f9f9;
+}
+.profesionnal-work hr{
+  border:1px solid black;
+  background-color: black;
+}
+.profesionnal-work{
+  background-image: url('/bg-2.png');
+}
+.profesionnal-work .description{
+  font-family: 'poppins';
+}
+.profesionnal-work .title{
+  font-family: 'agatho';
+}
+.about-details{
+  font-family: 'agatho';
+}
+
+
+
+/* Dropdown container */
+.second-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.second-dropdown:hover {
+  margin-right: 250px;
+  transition: margin-right 0.5s ease;
+}
+
+.second-dropdown-button {
+  background-color: #8cef0b;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  width: 95px;
+  height: 96px;
+  border: 1px solid #262626;
+  border-left: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dropdown menu */
+.second-dropdown-menu {
+  position: absolute;
+  top: 0; /* Position the menu to the right of the button */
+  left: 100%;
+  background-color: #f9f9f9;
+  border-right: 1px solid #262626;
+  width: auto; /* Adjust width based on content */
+  z-index: 1;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  overflow: hidden; /* Ensure the dropdown doesn't overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Dropdown menu list */
+.second-dropdown-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display list items horizontally */
+}
+
+.second-dropdown-menu li {
+  height: 96px;
+  padding: 15px;
+  color: #000000;
+  cursor: pointer;
+  text-align: center; /* Center the text inside each option */
+  transition: background-color 0.3s ease;
+  border: 1px solid #262626;
+  border-left: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-dropdown-menu li:last-child {
+  border-right: none; /* Remove border from the last item */
+}
+
+/* Hover effect for dropdown */
+.second-dropdown:hover .second-dropdown-menu {
+  opacity: 1;
+  transform: translateX(0);
+}
+.second-logo{
+  border: 1px solid black;
+}
+
+
+/* MARQUEE */
+.marquee {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+}
+
+.project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Make the image bigger and cover the entire area */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  z-index: -1; /* Ensure it stays behind the content */
+}
+
+.work-details{
+  border: 1px solid white
+}
+.work-title{
+  font-family: 'agatho';
+  color: #f9f9f9;
+  padding-left: 20px;
+  padding-top: 10px;
+  text-transform: uppercase;
+}
+.work-content {
+  display: none;
+  opacity: 0;
+  padding: 20px;
+  font-weight: lighter;
+}
+
+.contact-information{
+  border: transparent;
+}
+
+.contact-information div{
+  border: transparent;
+}
+
+.contact-information div div{
+  border: transparent;
+}
+
+footer{
+  background-image: url('/bg-2.png');
+}
