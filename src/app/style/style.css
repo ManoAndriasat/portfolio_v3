@@ -36,7 +36,7 @@ body, html{
 .foot{
     position: absolute;
     display: inline;
-    bottom: 50;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -44,6 +44,7 @@ body, html{
     padding: 2px;
     text-transform: uppercase;
     font-size: 14px;
+    margin-bottom: 20px;
 }
 
 .simple-word{
