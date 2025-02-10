@@ -28,7 +28,23 @@ export default function Home() {
   const handleMouseEnter = () => setIsOpen(true);
   const handleMouseLeave = () => setIsOpen(false);
 
-
+  useEffect(() => {
+    import('splitting').then((SplittingModule) => {
+      const Splitting = SplittingModule.default;
+      const results = Splitting({ target: textRef.current, by: 'chars' });
+      const chars = results[0].chars;
+      gsap.from(chars, {
+        opacity: 0,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: mainRef.current,
+          start: 'top 50%',
+          end: 'bottom bottom+90vh',
+          scrub: true,
+        },
+      });
+    });
+  }, []);
 
   useEffect(() => {
     import('gsap').then((gsapModule) => {
@@ -79,31 +95,6 @@ export default function Home() {
         }
 
 
-          import('splitting').then((SplittingModule) => {
-            const Splitting = SplittingModule.default;
-            const results = Splitting({ target: textRef.current, by: 'chars' });
-      
-            // Ensure chars are available before continuing
-            if (results && results[0] && results[0].chars) {
-              const chars = results[0].chars;
-              
-              gsap.from(chars, {
-                opacity: 0,
-                stagger: 0.05,
-                scrollTrigger: {
-                  trigger: mainRef.current,
-                  start: 'top 50%',
-                  end: 'bottom bottom+90vh',
-                  scrub: true,
-                },
-              });
-            } else {
-              console.warn("Splitting characters not available");
-            }
-          }).catch((error) => {
-            console.error('Error loading Splitting:', error);
-          });
-
         if (secondHeaderRef.current) {
           gsap.from(secondHeaderRef.current, {
             opacity: 0,
@@ -127,7 +118,6 @@ export default function Home() {
               end: 'bottom top',
               scrub: true,
               pin: true,
-              markers: true,
             },
           });
         }
@@ -136,13 +126,13 @@ export default function Home() {
 
     gsap.to(contactInformation.current, {
       y: '-30vh',
+      ease: 'none',
       scrollTrigger: {
         trigger: contact.current,
         start: 'top top',
         end: 'bottom top',
         scrub: true,
         pin: true,
-        markers: true,
       },
     });
 
@@ -333,23 +323,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={contact} className="w-full h-[50vh] bg-black text-[#f9f9f9]">
+      <div ref={contact} className="w-full h-[45vh] lg:h-[60vh] bg-black text-[#f9f9f9]">
         <ModifHr left={10} text={"How you can contact me."} right={80} color={'#f9f9f9'} />
         <SuperposedMarquee text='Contact' background='Get in touch with me.' />
       </div>
 
       <div ref={contactInformation} className="contact-information w-full h-0 border-none">
-        <footer className="bg-[#f9f9f9] text-black h-[50vh] border-none">
-          <div className='flex justify-between items-center w-full border-none'>
-            <div className="left bg-black p-[40px] border-none rounded-br-[20px] hidden lg:inline"></div>
-            <div className='flex justify-between items-center'>
-              <a href=""></a>
-              <a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"></a>
-            </div>
-            <div className="right bg-black p-[40px] border-none rounded-bl-[20px] hidden lg:inline"></div>
-          </div>
-
-
+        <footer className="bg-[#f9f9f9] text-black border-none">
           <div className='items-center w-full border-none h-[50vh] lg:h-fit px-[5%]'>
             <div className="social flex justify-between" >
               <h1 className='text-[6em] font-extrabold' style={{ fontWeight: 'bold' }}>Mano.</h1>
@@ -377,7 +357,6 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-
             <div>
             </div>
           </div>
