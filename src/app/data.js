@@ -3,7 +3,7 @@ const Cards = [
       "title": "Datamart Design and Dashboard Development",
       "description": "Design of a datamart (a specialized data storage system). Automatic data extraction from a data warehouse (DHIS2) to our datamart via an ETL process. Development of an online dashboard and data analysis tools for a government program (PARN).",
       "participants": "Internship",
-      "techno": "Technologies used (e.g., SQL, ETL tools, Tableau, etc.)",
+      "techno": "Django Rest - React - DHIS2 - SQL - scikit-learn",
       "society": "Project Coordination Unit",
       "link": "Link to project (if available)",
       "date": "JUN - OCT 2024"
