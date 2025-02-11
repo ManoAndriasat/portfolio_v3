@@ -249,7 +249,7 @@ export default function Home() {
         </div>
 
         <div className="foot grid grid-cols-12">
-          <span className='pl-0 lg:pl-2 word col-span-8 lg:col-span-10'>Developer for startup who have taste for good design</span>
+          <span className='pl-0 lg:pl-2 word col-span-8 lg:col-span-10 pr-2'>Developer for startup who have taste for good design</span>
           <span className="year col-span-4 lg:col-span-2 pl-2">Mano Andriasat</span>
         </div>
       </div>
