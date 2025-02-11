@@ -363,7 +363,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-[45vh] lg:h-[60vh] bg-[#1c1b19] text-[#f9f9f9]">
+      <div className="h-[45vh] lg:h-[60vh] bg-[#1c1b19] text-[#f9f9f9] mt-[20px] lg:mt-0">
         <ModifHr left={10} text={"May be you wonder what am I."} right={75} color={'#f9f9f9'} />
         <SuperposedMarquee text='Who am I ?' background='May be you wonder who am I.' />
       </div>
@@ -395,7 +395,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div id='contact' ref={contactRef} className="h-[45vh] lg:h-[60vh] bg-[#1c1b19] text-[#f9f9f9]">
+      <div id='contact' ref={contactRef} className="h-[45vh] lg:h-[60vh] bg-[#1c1b19] text-[#f9f9f9] mt-10">
         <ModifHr left={10} text={"How you can contact me."} right={80} color={'#f9f9f9'} />
         <SuperposedMarquee text='Contact' background='Get in touch with me.' />
       </div>
@@ -411,6 +411,8 @@ export default function Home() {
             </ul>
             <div className="right bg-[#1c1b19] p-[20px] lg:p-[30px] border-none rounded-bl-[20px]"></div>
           </div>
+        <div className='p-5'>
+        </div>
           <div className='py-[3%]'>
             <div className='flex justify-between items-center'>
               <div className="pl-[5%]">
@@ -432,10 +434,8 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
             </div>
             <div className='p-5'>
-
             </div>
           </div>
         </footer>
