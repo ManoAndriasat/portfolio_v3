@@ -319,7 +319,7 @@ export default function Home() {
       <div className="bg-[#1c1b19] work z-10 min-h-screen">
         <ModifHr left={10} text={"Some of my work that might interest you."} right={75} color={'#f9f9f9'} />
         <div>
-          <h1 className='about-title text-[4em] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-20 leading-none'>Personal Work.</h1>
+          <h1 className='about-title text-[4em] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-10 pt-10 lg:pt-0 leading-none'>Personal Work.</h1>
           {Cards.map((card, index) => (
             <div key={index} className={`work-details work-${index} flex items-center`}>
               <div className='ml-5 p-5 lg:p-10'>
