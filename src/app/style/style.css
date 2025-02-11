@@ -69,7 +69,7 @@ body, html{
 
   /* Button styling */
   .dropdown-button {
-    background-color: #8cef0b;
+    background-color: #be5b2a;
     color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
@@ -161,7 +161,7 @@ body, html{
 }
 
 .second-dropdown-button {
-  background-color: #8cef0b;
+  background-color: #be5b2a;
   color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
