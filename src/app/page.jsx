@@ -2,7 +2,7 @@
 import './style/style.css';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect, use } from 'react';
-import { FaBars, FaArrowDown, FaExternalLinkAlt, FaLinkedin, FaLongArrowAltRight } from 'react-icons/fa';
+import { FaBars, FaArrowDown, FaExternalLinkAlt, FaLinkedin } from 'react-icons/fa';
 import { FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
 import { gsap } from 'gsap';
 import 'tailwindcss/tailwind.css';
@@ -11,7 +11,7 @@ import ModifMarquee from "./components/Marquee";
 import { Cards, skillsData } from './data';
 import ModifHr from './components/ModifHr';
 import SuperposedMarquee from './components/SuperposedMarquee';
-import 'splitting/dist/splitting.css';
+import Splitting from 'splitting';
 
 
 export default function Home() {
@@ -28,24 +28,23 @@ export default function Home() {
   const handleMouseEnter = () => setIsOpen(true);
   const handleMouseLeave = () => setIsOpen(false);
 
-  // useEffect(() => {
-  //   import('splitting').then((SplittingModule) => {
-  //     const Splitting = SplittingModule.default;
-  //     const results = Splitting({ target: textRef.current, by: 'chars' });
-  //     const chars = results[0].chars;
-  //     gsap.from(chars, {
-  //       opacity: 0,
-  //       stagger: 0.05,
-  //       scrollTrigger: {
-  //         trigger: mainRef.current,
-  //         start: 'top 50%',
-  //         end: 'bottom bottom',
-  //         scrub: true,
-  //       },
-  //     });
-  //   });
-  // }, []);
-
+  useEffect(() => {
+    if (textRef.current) {
+      gsap.registerPlugin(ScrollTrigger);
+      const results = Splitting({ target: textRef.current, by: 'chars' });
+      const chars = results[0].chars;
+      gsap.from(chars, {
+        opacity: 0,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: mainRef.current,
+          start: 'top 50%',
+          end: 'bottom bottom+90vh',
+          scrub: true,
+        },
+      });
+    }
+  }, []);
 
   useEffect(() => {
     import('gsap').then((gsapModule) => {
