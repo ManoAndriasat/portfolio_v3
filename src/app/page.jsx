@@ -39,7 +39,7 @@ export default function Home() {
         scrollTrigger: {
           trigger: mainRef.current,
           start: 'top 50%',
-          end: 'bottom bottom+90vh',
+          end: 'bottom bottom',
           scrub: true,
         },
       });
@@ -266,8 +266,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={mainRef} className="main w-full">
-        <div className="about">
+      <div ref={mainRef} className="main w-full h-0">
+        <div className="about h-screen">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-black">
             <h1 ref={aboutTitleRef} className='about-title text-[6em] text-weight-[bold]'>About.</h1>
