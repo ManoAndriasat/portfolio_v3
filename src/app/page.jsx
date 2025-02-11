@@ -353,8 +353,8 @@ export default function Home() {
           <div className='py-[3%]'>
             <div className='flex justify-between items-center'>
               <div className="pl-[5%]">
-                <h1 className='font-extrabold text-[2.5em] lg:text-[4em] lg:text-[6em]'>Mano.</h1>
-                <p className='font-bold text-[20px]'>© 2025.</p>
+                <p className='font-extrabold text-[18px] lg:text-[6em]'>Mano.</p>
+                <p className='font-bold text-[18px]'>© 2025.</p>
               </div>
               <div className='pr-[5%]'>
                 <ul className='text-[18px] lg:text-[40px] inline-flex gap-5'>
