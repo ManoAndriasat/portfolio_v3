@@ -304,3 +304,19 @@ footer{
   border-radius: 3px;
   padding: 5px 10px;
 }
+
+.underline-custom {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+}
+
+.underline-custom::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #be5b2a, #b6a897, #22aa2e, #d69a3f);
+}

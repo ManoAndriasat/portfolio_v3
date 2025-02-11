@@ -1,5 +1,14 @@
 const Cards = [
     {
+      "title": "Datamart Design and Dashboard Development",
+      "description": "Design of a datamart (a specialized data storage system). Automatic data extraction from a data warehouse (DHIS2) to our datamart via an ETL process. Development of an online dashboard and data analysis tools for a government program (PARN).",
+      "participants": "Internship",
+      "techno": "Technologies used (e.g., SQL, ETL tools, Tableau, etc.)",
+      "society": "Project Coordination Unit",
+      "link": "Link to project (if available)",
+      "date": "JUN - OCT 2024"
+    },
+    {
       title: "Dynamic Room Reservation Calendar",
       description: "Development of a room reservation management application, allowing users to manage absences and book vehicles for missions, optimizing resource organization.",
       participants: "Solo project",
@@ -86,7 +95,7 @@ const Cards = [
       title: "UI/UI Developer",
       description:
         "I have a very particular interest in UI/UX development because I can combine it with my great sense of design. I often use JavaScript frameworks and libraries like:",
-      languages: ["React", "Next", "Vue", "React Native", "GSAP", "jQuery"],
+      languages: ["React", "Next", "Vue", "React Native", "GSAP","Tailwind"],
       bgColor: "#be5b2a",
     },
     {

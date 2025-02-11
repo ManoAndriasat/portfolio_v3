@@ -433,7 +433,7 @@ export default function Home() {
                     <FaArrowRight ref={rightArrowRight} />
                   </li>
                   <li>
-                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold underline">ma.andriasat@gmail.com</a>
+                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold underline-custom">ma.andriasat@gmail.com</a>
                   </li>
                 </ul>
               </div>
