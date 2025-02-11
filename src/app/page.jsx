@@ -11,8 +11,6 @@ import ModifMarquee from "./components/Marquee";
 import { Cards, skillsData } from './data';
 import ModifHr from './components/ModifHr';
 import SuperposedMarquee from './components/SuperposedMarquee';
-import Splitting from 'splitting';
-
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,21 +27,27 @@ export default function Home() {
   const handleMouseLeave = () => setIsOpen(false);
 
   useEffect(() => {
-    if (textRef.current) {
-      gsap.registerPlugin(ScrollTrigger);
-      const results = Splitting({ target: textRef.current, by: 'chars' });
-      const chars = results[0].chars;
-      gsap.from(chars, {
-        opacity: 0,
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: 'top 50%',
-          end: 'bottom bottom+90vh',
-          scrub: true,
-        },
-      });
-    }
+    const initAnimation = async () => {
+      const Splitting = (await import('splitting')).default;
+
+      if (textRef.current) {
+        const results = Splitting({ target: textRef.current, by: 'chars' });
+        const chars = results[0].chars;
+
+        gsap.from(chars, {
+          opacity: 0,
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: mainRef.current,
+            start: 'top 50%',
+            end: 'bottom bottom+90vh',
+            scrub: true,
+          },
+        });
+      }
+    };
+
+    initAnimation();
   }, []);
 
   useEffect(() => {
