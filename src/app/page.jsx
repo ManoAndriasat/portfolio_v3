@@ -400,7 +400,7 @@ export default function Home() {
 
       <div id='contact' ref={contactRef} className="h-[45vh] lg:h-[60vh] bg-[#1c1b19] text-[#f9f9f9] mt-10">
         <ModifHr left={10} text={"How you can contact me."} right={80} color={'#f9f9f9'} />
-        <SuperposedMarquee text='Contact' background='Get in touch with me.' />
+        <SuperposedMarquee text='Contact me' background='Get in touch with me.' />
       </div>
 
       <div ref={contactInformation} className="contact-information h-0 border-none">

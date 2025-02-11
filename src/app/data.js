@@ -92,7 +92,7 @@ const Cards = [
 
   const skillsData = [
     {
-      title: "UI/UI Developer",
+      title: "UI/UX Developer",
       description:
         "I have a very particular interest in UI/UX development because I can combine it with my great sense of design. I often use JavaScript frameworks and libraries like:",
       languages: ["React", "Next", "Vue", "React Native", "GSAP","Tailwind"],
