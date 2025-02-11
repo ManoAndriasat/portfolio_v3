@@ -109,31 +109,19 @@ export default function Home() {
           });
         }
 
-        if (contactInformation.current) {
-          gsap.to(contactInformation.current, {
-            y: '-30vh',
-            scrollTrigger: {
-              trigger: contact.current,
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true,
-              pin: true,
-            },
-          });
-        }
+        // if (contactInformation.current) {
+        //   gsap.to(contactInformation.current, {
+        //     y: '-30vh',
+        //     scrollTrigger: {
+        //       trigger: contact.current,
+        //       start: 'top top',
+        //       end: 'bottom top',
+        //       scrub: true,
+        //       pin: true,
+        //     },
+        //   });
+        // }
       });
-    });
-
-    gsap.to(contactInformation.current, {
-      y: '-30vh',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: contact.current,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-        pin: true,
-      },
     });
 
     import('@studio-freight/lenis').then((LenisModule) => {
