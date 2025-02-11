@@ -35,6 +35,8 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content="Découvrez nos services innovants." />
         <meta name="twitter:image" content="./logo.ico" />
 
+
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -50,13 +52,13 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZB96M20GJ"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-76MZXLNDG4"></script>
         <script id="google-analytics" strategy="afterInteractive">
           {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-5ZB96M20GJ');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-76MZXLNDG4');
             `}
         </script>
 
