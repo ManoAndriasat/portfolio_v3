@@ -121,19 +121,19 @@ export default function Home() {
           });
         }
 
-        // if (aboutTitleRef.current) {
-        //   gsap.from(aboutTitleRef.current, {
-        //     opacity: 0,
-        //     duration: 1,
-        //     y: '-20px',
-        //     scrollTrigger: {
-        //       trigger: mainRef.current,
-        //       start: 'top 70%',
-        //       end: 'top 50%',
-        //       scrub: true,
-        //     },
-        //   });
-        // }
+        if (aboutTitleRef.current) {
+          gsap.from(aboutTitleRef.current, {
+            opacity: 0,
+            duration: 1,
+            y: '-20px',
+            scrollTrigger: {
+              trigger: mainRef.current,
+              start: 'top 70%',
+              end: 'top 50%',
+              scrub: true,
+            },
+          });
+        }
 
         if (mainRef.current) {
           gsap.to(mainRef.current, {
