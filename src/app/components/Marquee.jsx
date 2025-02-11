@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 
 export default function ModifMarquee() {
     return(
-        <div className='lg:mt-0 p-[5%]'>
+        <div className='lg:mt-0 px-[5%] py-[10%]'>
             <Marquee gradient={false} speed={50}>
                 {[...Array(10)].map((_, index) => (
                     <React.Fragment key={index}>
