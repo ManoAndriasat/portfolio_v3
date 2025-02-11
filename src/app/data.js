@@ -99,7 +99,7 @@ const Cards = [
       bgColor: "#be5b2a",
     },
     {
-      title: "Back-End Developer",
+      title: "BackEnd",
       description: "Skilled in server-side development and database management.",
       languages: ["Spring Boot", "ASP.net", "Express Js", "PostgreSQL", "Oracle", "MySql"],
       bgColor: "#b6a897",
