@@ -210,7 +210,7 @@ export default function Home() {
 
   return (
     <>
-      <div ref={secondHeaderRef} className="second-header w-full flex justify-center fixed bottom-0 left-0 right-0 z-50 mb-4 opacity-1 hidden lg:flex">
+      <div ref={secondHeaderRef} className="second-header flex justify-center fixed bottom-0 left-0 right-0 z-50 mb-4 opacity-1 hidden lg:flex">
         <div className="flex items-center">
           <span className="second-logo p-3 bg-[#f9f9f9]">
             <Image src="/logo.png" width={70} height={70} alt="logo" />
@@ -231,7 +231,7 @@ export default function Home() {
       </div>
 
       <div className='landing text-[#f9f9f9] h-screen' ref={landingRef}>
-        <div className="header w-full flex justify-between items-center">
+        <div className="header flex justify-between items-center">
           <span className='logo p-3 bg-[#f9f9f9]'>
             <Image src="/logo.png" width={70} height={70} alt='logo' />
           </span>
@@ -266,7 +266,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={mainRef} className="main w-full h-[20vh]">
+      <div ref={mainRef} className="main h-[20vh]">
         <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-black">
@@ -309,12 +309,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full h-[45vh] lg:h-[60vh] bg-black text-[#f9f9f9]">
+      <div className="h-[45vh] lg:h-[60vh] bg-black text-[#f9f9f9]">
         <ModifHr left={10} text={"May be you wonder what am I."} right={75} color={'#f9f9f9'} />
         <SuperposedMarquee text='Who am I ?' background='May be you wonder what am I.' />
       </div>
 
-      <div className="profesionnal-work w-full h-[60vh] bg-black text-black">
+      <div className="profesionnal-work h-[60vh] bg-black text-black">
         <ModifHr left={10} text={"What I have already done."} right={80} color={'black'} />
         <div className=" grid grid-cols-12 h-[50vh]">
           <div className="col-span-12 p-[5%] language">
@@ -323,14 +323,18 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={contact} className="w-full h-[45vh] lg:h-[60vh] bg-black text-[#f9f9f9]">
+      <div ref={contact} className="h-[45vh] lg:h-[60vh] bg-black text-[#f9f9f9]">
         <ModifHr left={10} text={"How you can contact me."} right={80} color={'#f9f9f9'} />
         <SuperposedMarquee text='Contact' background='Get in touch with me.' />
       </div>
 
-      <div ref={contactInformation} className="contact-information w-full h-0 border-none">
+      <div ref={contactInformation} className="contact-information h-0 border-none">
         <footer className="bg-[#f9f9f9] text-black border-none">
-          <div className='items-center w-full border-none h-[50vh] lg:h-fit px-[5%]'>
+          <div className='flex justify-between items-centerborder-none'>
+            <div className="left bg-black p-[40px] border-none rounded-br-[20px] hidden lg:inline"></div>
+            <div className="right bg-black p-[40px] border-none rounded-bl-[20px] hidden lg:inline"></div>
+          </div>
+          <div className='items-center border-none h-[50vh] lg:h-fit px-[5%]'>
             <div className="social flex justify-between" >
               <h1 className='font-extrabold text-[4em] lg:text-[6em]'>Mano.</h1>
             </div>
