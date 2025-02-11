@@ -93,7 +93,7 @@ export default function Home() {
             },
           });
         }
-
+  
 
         if (secondHeaderRef.current) {
           gsap.from(secondHeaderRef.current, {
@@ -230,7 +230,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='landing text-[#f9f9f9]' ref={landingRef}>
+      <div className='landing text-[#f9f9f9] h-screen' ref={landingRef}>
         <div className="header w-full flex justify-between items-center">
           <span className='logo p-3 bg-[#f9f9f9]'>
             <Image src="/logo.png" width={70} height={70} alt='logo' />
@@ -266,8 +266,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={mainRef} className="main w-full rounded-t-[50px] h-0">
-        <div className="about h-content">
+      <div ref={mainRef} className="main w-full rounded-t-[50px] h-[100vh]">
+        <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-black">
             <h1 ref={aboutTitleRef} className='about-title text-[6em] text-weight-[bold]'>About.</h1>
@@ -278,7 +278,7 @@ export default function Home() {
       </div>
 
 
-      <div className="bg-black work z-10 h-content">
+      <div className="bg-black work z-10 min-h-screen">
         <ModifHr left={10} text={"Some of my work that might interest you."} right={75} color={'#f9f9f9'} />
         <div>
           <h1 className='about-title text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-20 leading-none'>Personal Work.</h1>
