@@ -22,10 +22,28 @@ export default function Home() {
   const contact = useRef(null);
   const contactInformation = useRef(null);
   const landingRef = useRef(null);
+  const miniBannerRef = useRef(null);
+  const arrowRef = useRef(null);
 
   const handleMouseEnter = () => setIsOpen(true);
   const handleMouseLeave = () => setIsOpen(false);
 
+
+  // ARROW ANIMATION
+  useEffect(() => {
+    if (arrowRef.current) {
+      gsap.to(arrowRef.current, {
+        y: 5,
+        duration: 0.8, 
+        repeat: -1,
+        yoyo: true, 
+        ease: 'power1.inOut',
+      });
+    }
+  }, []);
+
+
+  // SPLITTING
   useEffect(() => {
     const initAnimation = async () => {
       const Splitting = (await import('splitting')).default;
@@ -35,21 +53,40 @@ export default function Home() {
         const chars = results[0].chars;
 
         gsap.from(chars, {
-          opacity: 0,
+          opacity: 0.1,
           stagger: 0.05,
           scrollTrigger: {
             trigger: mainRef.current,
-            start: 'top 50%',
+            start: 'top 70%',
             end: 'bottom bottom',
             scrub: true,
           },
         });
       }
+
+      if (miniBannerRef.current) {
+        const results = Splitting({ target: miniBannerRef.current, by: 'chars' });
+        const chars = results[0].chars;
+
+        gsap.from(chars, {
+          opacity: 0,
+          stagger: 0.05,
+          duration: 0.5,
+          scrollTrigger: {
+            trigger: landingRef.current,
+            start: 'top 50%',
+            end: 'bottom bottom',
+          },
+        });
+      }
+
     };
 
     initAnimation();
   }, []);
 
+
+  // BASIC SCROLL TRIGGER
   useEffect(() => {
     import('gsap').then((gsapModule) => {
       const gsap = gsapModule.default;
@@ -78,8 +115,8 @@ export default function Home() {
             y: '-50px',
             scrollTrigger: {
               trigger: mainRef.current,
-              start: 'top 50%',
-              end: 'top 40%',
+              start: 'top 70%',
+              end: 'top 50%',
               scrub: true,
             },
           });
@@ -152,6 +189,7 @@ export default function Home() {
   }, []);
 
 
+  // WORK DETAILS ANIMATION
   useEffect(() => {
     if (typeof window !== 'undefined' && document) {
       gsap.registerPlugin(ScrollTrigger);
@@ -169,7 +207,7 @@ export default function Home() {
 
             ScrollTrigger.create({
               trigger: work,
-              start: `top ${350}px`,
+              start: `top ${400}px`,
               end: `bottom top`,
               onEnter: () => {
                 gsap.to(workContent, { opacity: 1, display: "block", duration: 0 });
@@ -234,7 +272,7 @@ export default function Home() {
             <Image src="/logo.png" width={70} height={70} alt='logo' />
           </span>
           <span className='flex items-center gap-2 mr-[5%]'>
-            scroll down <span className='bg-[#f9f9f9] rounded-[50%] text-[#1c1b19] p-3 text-xl'><FaArrowDown /></span>
+            scroll down <span className='bg-[#f9f9f9] rounded-[50%] text-[#1c1b19] p-3 text-xl'><  FaArrowDown ref={arrowRef} /></span>
           </span>
         </div>
 
@@ -255,7 +293,7 @@ export default function Home() {
 
         <div className="simple-word lg:pl-[35%] lg:pr-[15%] mt-[15%] lg:mt-0 mx-5 lg:mx-0">
           <p className="leading-none text-[3em] lg:text-[6em]">THINGS THAT YOU ARE NOT PROUD OF SHOULDN'T BE SIGNED BY YOUR NAME.</p>
-          <p className='font-sans'>Show your worth through your work.</p>
+          <p ref={miniBannerRef} className='font-sans mini-banner'>Show your worth through your work.</p>
         </div>
 
         <div className="foot grid grid-cols-12">
