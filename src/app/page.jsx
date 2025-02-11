@@ -93,7 +93,7 @@ export default function Home() {
             },
           });
         }
-  
+
 
         if (secondHeaderRef.current) {
           gsap.from(secondHeaderRef.current, {
@@ -266,8 +266,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={mainRef} className="main w-full h-0">
-        <div className="about h-screen">
+      <div ref={mainRef} className="main w-full h-[10vh]">
+        <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-black">
             <h1 ref={aboutTitleRef} className='about-title text-[6em] text-weight-[bold]'>About.</h1>

@@ -29,6 +29,7 @@ body, html{
 .about{
     background-image: url('/bg-2.png');
     background-size: cover;
+    height: max-content;
 }
 
 .foot{
