@@ -271,7 +271,7 @@ export default function Home() {
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-black">
             <h1 ref={aboutTitleRef} className='about-title text-[6em] text-weight-[bold]'>About.</h1>
-            <p ref={textRef} className='about-reveal text-[2.5em] lg:text-[5em] leading-none'>My full name is Andriasatarintsoa Manohisoa, I am 21 years old and I live in Antananarivo, Madagascar. Since 2021, I have been pursuing my studies at IT University Andoharanofotsy, where I specialize in application development.</p>
+            <p ref={textRef} className='about-reveal text-[2.3em] lg:text-[5em] leading-none'>My full name is Andriasatarintsoa Manohisoa, I am 21 years old and I live in Antananarivo, Madagascar. Since 2021, I have been pursuing my studies at IT University Andoharanofotsy, where I specialize in application development.</p>
           </div>
           <ModifMarquee />
         </div>
