@@ -319,8 +319,8 @@ export default function Home() {
       <div ref={contactInformation} className="contact-information h-0 border-none">
         <footer className="bg-[#f9f9f9] text-black border-none">
           <div className='flex justify-between items-centerborder-none'>
-            <div className="left bg-black p-[40px] border-none rounded-br-[20px]"></div>
-            <div className="right bg-black p-[40px] border-none rounded-bl-[20px]"></div>
+            <div className="left bg-black p-[20px] lg:p-[40px] border-none rounded-br-[20px]"></div>
+            <div className="right bg-black p-[20px] lg:p-[40px] border-none rounded-bl-[20px]"></div>
           </div>
           <div className='items-center border-none h-[50vh] lg:h-fit px-[5%]'>
             <div className="social flex justify-between" >
