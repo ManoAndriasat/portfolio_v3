@@ -150,7 +150,7 @@ export default function Home() {
             opacity: 0,
             y: '200px',
             scrollTrigger: {
-              trigger: mainRef.current,
+              trigger: '.work',
               start: 'top bottom',
               end: 'top bottom',
               onEnter: () => gsap.to(secondHeaderRef.current, { opacity: 1 }),
@@ -402,7 +402,7 @@ export default function Home() {
           <div className='py-[3%]'>
             <div className='flex justify-between items-center'>
               <div className="pl-[5%]">
-                <p className='font-extrabold text-[18px] lg:text-[6em]'>Mano.</p>
+                <p className='font-extrabold text-[18px] lg:text-[5em]'>Mano.</p>
                 <p className='font-bold text-[18px]'>© 2025.</p>
               </div>
               <div className='pr-[5%] text-right flex flex-col items-end'>
