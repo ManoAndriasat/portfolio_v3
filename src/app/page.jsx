@@ -207,7 +207,7 @@ export default function Home() {
 
             ScrollTrigger.create({
               trigger: work,
-              start: `top ${400}px`,
+              start: `top ${380}px`,
               end: `bottom top`,
               onEnter: () => {
                 gsap.to(workContent, { opacity: 1, display: "block", duration: 0 });
@@ -391,7 +391,7 @@ export default function Home() {
           <div className='py-[3%]'>
             <div className='flex justify-between items-center'>
               <div className="pl-[5%]">
-                <p className='font-extrabold text-[18px] lg:text-[6em]'>Mano.</p>
+                <p className='font-extrabold text-[25px] lg:text-[6em]'>Mano.</p>
                 <p className='font-bold text-[18px]'>© 2025.</p>
               </div>
               <div className='pr-[5%]'>
