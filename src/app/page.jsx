@@ -40,7 +40,7 @@ export default function Home() {
           scrollTrigger: {
             trigger: mainRef.current,
             start: 'top 50%',
-            end: 'bottom bottom+90vh',
+            end: 'bottom bottom',
             scrub: true,
           },
         });
@@ -87,13 +87,15 @@ export default function Home() {
 
         if (mainRef.current) {
           gsap.to(mainRef.current, {
-            y: '-100vh',
+            y: '-0vh',
             scrollTrigger: {
               trigger: landingRef.current,
               start: 'top top',
               end: 'bottom top',
               pin: true,
               scrub: true,
+              pinSpacing: false,
+              invalidateOnRefresh: true,
             },
           });
         }
@@ -113,31 +115,18 @@ export default function Home() {
           });
         }
 
-        // if (contactInformation.current) {
-        //   gsap.to(contactInformation.current, {
-        //     y: '-30vh',
-        //     scrollTrigger: {
-        //       trigger: contact.current,
-        //       start: 'top top',
-        //       end: 'bottom top',
-        //       scrub: true,
-        //       pin: true,
-        //     },
-        //   });
-        // }
-
         const skills = gsap.utils.toArray(".skill");
-        const spacer = 200;
+        const isMobile = window.innerWidth < 768;
+        const spacer = isMobile ? 100 : 200;
+        const duration = isMobile ? 200 : 300;
         skills.forEach((skill, index) => {
-
           ScrollTrigger.create({
             trigger: skill,
-            start: `top-=${(index * spacer)} top`,
+            start: `top-=${index * spacer} top`,
             endTrigger: '.skills',
-            end: `bottom top+=${300 + (skills.length * spacer)}`,
+            end: `bottom top+=${duration + (skills.length * spacer)}`,
             pin: true,
             pinSpacing: false,
-            markers: true,
             id: 'pin',
             invalidateOnRefresh: true,
           });
@@ -275,12 +264,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={mainRef} className="main h-[20vh]">
+      <div ref={mainRef} className="main h-[100vh]">
         <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-[#1c1b19]">
             <h1 ref={aboutTitleRef} className='about-title text-[4em] lg:text-[6em] text-weight-[bold]'>About.</h1>
-            <p ref={textRef} className='about-reveal text-[2.3em] lg:text-[5em] leading-none'>My full name is Andriasatarintsoa Manohisoa, I am 21 years old and I live in Antananarivo, Madagascar. Since 2021, I have been pursuing my studies at IT University Andoharanofotsy, where I specialize in application development.</p>
+            <p ref={textRef} className='about-reveal text-[2.5em] lg:text-[5em] leading-none'>My full name is Andriasatarintsoa Manohisoa, I am 21 years old and I live in Antananarivo, Madagascar. Since 2021, I have been pursuing my studies at IT University Andoharanofotsy, where I specialize in application development.</p>
           </div>
           <div className="marquee mt-10">
             <ModifMarquee />
@@ -329,7 +318,7 @@ export default function Home() {
           {skillsData.map((skill, index) => (
             <div
               key={index}
-              className="skill h-[60vh] p-10"
+              className="skill h-content lg:h-[60vh] p-5 lg:p-10"
               style={{ backgroundColor: skill.bgColor }}
             >
               <p className='text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase py-5'>
@@ -339,7 +328,7 @@ export default function Home() {
                 {skill.description}
               </h1>
               <div className="text-[18px] lg:text-[30px]">
-                <ul className='language inline-flex gap-5 py-10'>
+                <ul className='language inline-flex gap-5 py-10 flex-wrap'>
                   {skill.languages.map((lang, i) => (
                     <li key={i}>{lang}</li>
                   ))}
