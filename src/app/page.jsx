@@ -270,7 +270,7 @@ export default function Home() {
         <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-black">
-            <h1 ref={aboutTitleRef} className='about-title text-[6em] text-weight-[bold]'>About.</h1>
+            <h1 ref={aboutTitleRef} className='about-title text-[4em] lg:text-[6em] text-weight-[bold]'>About.</h1>
             <p ref={textRef} className='about-reveal text-[2.3em] lg:text-[5em] leading-none'>My full name is Andriasatarintsoa Manohisoa, I am 21 years old and I live in Antananarivo, Madagascar. Since 2021, I have been pursuing my studies at IT University Andoharanofotsy, where I specialize in application development.</p>
           </div>
           <ModifMarquee />
@@ -281,7 +281,7 @@ export default function Home() {
       <div className="bg-black work z-10 min-h-screen">
         <ModifHr left={10} text={"Some of my work that might interest you."} right={75} color={'#f9f9f9'} />
         <div>
-          <h1 className='about-title text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-20 leading-none'>Personal Work.</h1>
+          <h1 className='about-title text-[4em] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-20 leading-none'>Personal Work.</h1>
           {Cards.map((card, index) => (
             <div key={index} className={`work-details work-${index} flex items-center`}>
               <div className='ml-5 p-5 lg:p-10'>
@@ -332,7 +332,7 @@ export default function Home() {
         <footer className="bg-[#f9f9f9] text-black border-none">
           <div className='items-center w-full border-none h-[50vh] lg:h-fit px-[5%]'>
             <div className="social flex justify-between" >
-              <h1 className='text-[6em] font-extrabold' style={{ fontWeight: 'bold' }}>Mano.</h1>
+              <h1 className='font-extrabold text-[4em] lg:text-[6em]'>Mano.</h1>
             </div>
             <div className='h-[20vh]'>
               <ul className='text-[20px] lg:text-[40px] inline-flex gap-5 mt'>
