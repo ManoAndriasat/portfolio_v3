@@ -28,23 +28,23 @@ export default function Home() {
   const handleMouseEnter = () => setIsOpen(true);
   const handleMouseLeave = () => setIsOpen(false);
 
-  useEffect(() => {
-    import('splitting').then((SplittingModule) => {
-      const Splitting = SplittingModule.default;
-      const results = Splitting({ target: textRef.current, by: 'chars' });
-      const chars = results[0].chars;
-      gsap.from(chars, {
-        opacity: 0,
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: 'top 50%',
-          end: 'bottom bottom',
-          scrub: true,
-        },
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   import('splitting').then((SplittingModule) => {
+  //     const Splitting = SplittingModule.default;
+  //     const results = Splitting({ target: textRef.current, by: 'chars' });
+  //     const chars = results[0].chars;
+  //     gsap.from(chars, {
+  //       opacity: 0,
+  //       stagger: 0.05,
+  //       scrollTrigger: {
+  //         trigger: mainRef.current,
+  //         start: 'top 50%',
+  //         end: 'bottom bottom',
+  //         scrub: true,
+  //       },
+  //     });
+  //   });
+  // }, []);
 
   useEffect(() => {
     import('gsap').then((gsapModule) => {
@@ -303,9 +303,7 @@ export default function Home() {
               </div>
             </div>
           ))}
-          <div key={Cards.length} className={`work-details work-${Cards.length} flex items-center`}>
-
-          </div>
+          {/* <div key={Cards.length} className={`work-details work-${Cards.length} flex items-center`}></div> */}
         </div>
       </div>
 
