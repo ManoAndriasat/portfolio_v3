@@ -1,8 +1,8 @@
 'use client';
 import './style/style.css';
 import Image from 'next/image';
-import React, { useState, useRef, useEffect, use } from 'react';
-import { FaBars, FaArrowDown, FaExternalLinkAlt, FaLinkedin } from 'react-icons/fa';
+import React, { useState, useRef, useEffect } from 'react';
+import { FaBars, FaArrowDown, FaExternalLinkAlt, FaLinkedin, FaArrowRight  } from 'react-icons/fa';
 import { FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
 import { gsap } from 'gsap';
 import 'tailwindcss/tailwind.css';
@@ -24,10 +24,10 @@ export default function Home() {
   const landingRef = useRef(null);
   const miniBannerRef = useRef(null);
   const arrowRef = useRef(null);
+  const rightArrowRight = useRef(null);
 
   const handleMouseEnter = () => setIsOpen(true);
   const handleMouseLeave = () => setIsOpen(false);
-
 
   // ARROW ANIMATION
   useEffect(() => {
@@ -40,8 +40,17 @@ export default function Home() {
         ease: 'power1.inOut',
       });
     }
-  }, []);
 
+    if (rightArrowRight.current) {
+      gsap.to(rightArrowRight.current, {
+        x: 10,
+        duration: 0.8, 
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+      });
+    }
+  }, []);
 
   // SPLITTING
   useEffect(() => {
@@ -79,9 +88,7 @@ export default function Home() {
           },
         });
       }
-
     };
-
     initAnimation();
   }, []);
 
@@ -187,7 +194,6 @@ export default function Home() {
       return () => lenis.destroy();
     });
   }, []);
-
 
   // WORK DETAILS ANIMATION
   useEffect(() => {
@@ -400,17 +406,23 @@ export default function Home() {
                   <li><a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"> <FaLinkedin /></a></li>
                   <li><a href="https://github.com/ManoAndriasat"><FaSquareGithub /></a></li>
                 </ul>
-                <ul className='flex gap-5'>
+                <ul className='flex gap-5 text-[18px] lg:text-[30px]'>
                   <li>
                     <a href="mailto:ma.andriasat@gmail.com" className="font-bold">0343373351</a>
                   </li>
                 </ul>
-                <ul className='flex gap-5'>
+                <ul className='inline-flex items-center gap-5 text-[18px] lg:text-[30px]'>
+                  <li className='mt-1'>
+                  <FaArrowRight  ref={rightArrowRight} />
+                  </li>
                   <li>
-                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold">ma.andriasat@gmail.com</a>
+                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold underline"> ma.andriasat@gmail.com</a>
                   </li>
                 </ul>
               </div>
+            </div>
+            <div className='p-5'>
+
             </div>
           </div>
         </footer>
