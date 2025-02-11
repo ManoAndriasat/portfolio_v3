@@ -266,7 +266,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={mainRef} className="main w-full h-[10vh]">
+      <div ref={mainRef} className="main w-full h-[20vh]">
         <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-black">
