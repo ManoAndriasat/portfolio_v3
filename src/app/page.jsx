@@ -262,11 +262,11 @@ export default function Home() {
 
         <div className="foot grid grid-cols-12">
           <span className='pl-0 lg:pl-2 word col-span-8 lg:col-span-10'>Developer for startup who have taste for good design</span>
-          <span className="year col-span-4 lg:col-span-2 pl-2">Mano Andriasat . 2025</span>
+          <span className="year col-span-4 lg:col-span-2 pl-2">Mano Andriasat</span>
         </div>
       </div>
 
-      <div ref={mainRef} className="main w-full rounded-t-[50px] h-[100vh]">
+      <div ref={mainRef} className="main w-full">
         <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-black">
