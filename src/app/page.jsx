@@ -19,15 +19,21 @@ export default function Home() {
   const aboutTitleRef = useRef(null);
   const mainRef = useRef(null);
   const secondHeaderRef = useRef(null);
-  const contact = useRef(null);
+  const contactRef = useRef(null);
   const contactInformation = useRef(null);
   const landingRef = useRef(null);
   const miniBannerRef = useRef(null);
   const arrowRef = useRef(null);
   const rightArrowRight = useRef(null);
+  const workRef = useRef(null);
+  const skillsRef = useRef(null);
 
   const handleMouseEnter = () => setIsOpen(true);
   const handleMouseLeave = () => setIsOpen(false);
+
+  const scrollToRef = (ref) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   // ARROW ANIMATION
   useEffect(() => {
@@ -178,6 +184,7 @@ export default function Home() {
       });
     });
 
+    // LENIS
     import('@studio-freight/lenis').then((LenisModule) => {
       const Lenis = LenisModule.default;
       const lenis = new Lenis({
@@ -194,6 +201,7 @@ export default function Home() {
       return () => lenis.destroy();
     });
   }, []);
+
 
   // WORK DETAILS ANIMATION
   useEffect(() => {
@@ -262,9 +270,11 @@ export default function Home() {
             {isOpen && (
               <div className="second-dropdown-menu">
                 <ul className="flex">
-                  <li>about</li>
-                  <li>work</li>
-                  <li>contact</li>
+                  <li><a onClick={() => scrollToRef(landingRef)}>Home</a></li>
+                  <li><a onClick={() => scrollToRef(mainRef)}>About</a></li>
+                  <li><a onClick={() => scrollToRef(workRef)}>Work</a></li>
+                  <li><a onClick={() => scrollToRef(skillsRef)}>Skills</a></li>
+                  <li><a onClick={() => scrollToRef(contactRef)}>Contact</a></li>
                 </ul>
               </div>
             )}
@@ -272,7 +282,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='landing text-[#f9f9f9] h-screen' ref={landingRef}>
+      <div id='home' className='landing text-[#f9f9f9] h-screen' ref={landingRef}>
         <div className="header flex justify-between items-center">
           <span className='logo p-3 bg-[#f9f9f9]'>
             <Image src="/logo.png" width={70} height={70} alt='logo' />
@@ -287,12 +297,14 @@ export default function Home() {
             <button className="dropdown-button"><FaBars /></button>
             {isOpen && (
               <div className="dropdown-menu">
-                <ul>
-                  <li>about</li>
-                  <li>work</li>
-                  <li>contact</li>
-                </ul>
-              </div>
+              <ul>
+                <li><button onClick={() => scrollToRef(landingRef)}>Home</button></li>
+                <li><button onClick={() => scrollToRef(mainRef)}>About</button></li>
+                <li><button onClick={() => scrollToRef(workRef)}>Work</button></li>
+                <li><button onClick={() => scrollToRef(skillsRef)}>Skills</button></li>
+                <li><button onClick={() => scrollToRef(contactRef)}>Contact</button></li>
+              </ul>
+            </div>
             )}
           </span>
         </div>
@@ -308,7 +320,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={mainRef} className="main min-h-[100vh] bg-[#f9f9f9]">
+      <div id='main' ref={mainRef} className="main min-h-[100vh] bg-[#f9f9f9]">
         <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-[#1c1b19]">
@@ -322,7 +334,7 @@ export default function Home() {
       </div>
 
 
-      <div className="bg-[#1c1b19] work z-10 min-h-screen">
+      <div id='work' ref={workRef} className="bg-[#1c1b19] work z-10 min-h-screen">
         <ModifHr left={10} text={"Some of my work that might interest you."} right={75} color={'#f9f9f9'} />
         <div>
           <h1 className='about-title text-[4em] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-10 pt-10 lg:pt-0 leading-none'>Personal Work.</h1>
@@ -356,7 +368,7 @@ export default function Home() {
         <SuperposedMarquee text='Who am I ?' background='May be you wonder who am I.' />
       </div>
 
-      <div className="profesionnal-work bg-[#1c1b19] text-[#1c1b19]">
+      <div id='skills' ref={skillsRef} className="profesionnal-work bg-[#1c1b19] text-[#1c1b19]">
         <ModifHr left={10} text={"My skills that could be useful to you."} right={76} color={'black'} />
         <div className="skills w-full">
           {skillsData.map((skill, index) => (
@@ -383,7 +395,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={contact} className="h-[45vh] lg:h-[60vh] bg-[#1c1b19] text-[#f9f9f9]">
+      <div id='contact' ref={contactRef} className="h-[45vh] lg:h-[60vh] bg-[#1c1b19] text-[#f9f9f9]">
         <ModifHr left={10} text={"How you can contact me."} right={80} color={'#f9f9f9'} />
         <SuperposedMarquee text='Contact' background='Get in touch with me.' />
       </div>
