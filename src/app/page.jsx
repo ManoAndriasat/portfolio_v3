@@ -125,7 +125,7 @@ export default function Home() {
           gsap.from(aboutTitleRef.current, {
             opacity: 0,
             duration: 1,
-            y: '-50px',
+            y: '-20px',
             scrollTrigger: {
               trigger: mainRef.current,
               start: 'top 70%',
