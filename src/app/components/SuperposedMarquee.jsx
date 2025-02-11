@@ -12,7 +12,7 @@ export default function SuperposedMarquee({text, background}) {
             <Marquee gradient={false} speed={80} className="leading-none overflow-hidden">
               {[...Array(15)].map((_, index) => (
                 <React.Fragment key={index}>
-                  <p className="text-[200px] lg:text-[300px] text-[#55555581] uppercase mr-[50px] font-extrabold">
+                  <p className="text-[150px] lg:text-[300px] text-[#55555581] uppercase mr-[50px] font-extrabold">
                     {background}
                   </p>
                 </React.Fragment>
