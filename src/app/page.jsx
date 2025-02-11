@@ -1,14 +1,14 @@
 'use client';
 import './style/style.css';
 import Image from 'next/image';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, use } from 'react';
 import { FaBars, FaArrowDown, FaExternalLinkAlt, FaLinkedin, FaLongArrowAltRight } from 'react-icons/fa';
 import { FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
 import { gsap } from 'gsap';
 import 'tailwindcss/tailwind.css';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ModifMarquee from "./components/Marquee";
-import Cards from './data';
+import { Cards, skillsData } from './data';
 import ModifHr from './components/ModifHr';
 import SuperposedMarquee from './components/SuperposedMarquee';
 import 'splitting/dist/splitting.css';
@@ -45,6 +45,7 @@ export default function Home() {
   //     });
   //   });
   // }, []);
+
 
   useEffect(() => {
     import('gsap').then((gsapModule) => {
@@ -121,6 +122,23 @@ export default function Home() {
         //     },
         //   });
         // }
+
+        const skills = gsap.utils.toArray(".skill");
+        const spacer = 200;
+        skills.forEach((skill, index) => {
+
+          ScrollTrigger.create({
+            trigger: skill,
+            start: `top-=${(index * spacer)} top`,
+            endTrigger: '.skills',
+            end: `bottom top+=${300 + (skills.length * spacer)}`,
+            pin: true,
+            pinSpacing: false,
+            markers: true,
+            id: 'pin',
+            invalidateOnRefresh: true,
+          });
+        });
       });
     });
 
@@ -163,8 +181,8 @@ export default function Home() {
               end: `bottom top`,
               onEnter: () => {
                 gsap.to(workContent, { opacity: 1, display: "block", duration: 0 });
-                gsap.to(workTitle, { color: "black", duration: 0 });
-                gsap.to(work, { backgroundColor: "#f9f9f9", color: "black", duration: 0 });
+                gsap.to(workTitle, { color: "#1c1b19", duration: 0 });
+                gsap.to(work, { backgroundColor: "#f9f9f9", color: "#1c1b19", duration: 0 });
 
                 workDetails.forEach((otherWork, otherIndex) => {
                   if (otherIndex !== index) {
@@ -172,21 +190,21 @@ export default function Home() {
                     const otherTitle = otherWork.querySelector(`.work-title-${otherIndex}`);
                     gsap.to(otherContent, { opacity: 0, display: "none", duration: 0 });
                     gsap.to(otherTitle, { color: "#f9f9f9", duration: 0 });
-                    gsap.to(otherWork, { backgroundColor: "black", color: "#f9f9f9", duration: 0 });
+                    gsap.to(otherWork, { backgroundColor: "#1c1b19", color: "#f9f9f9", duration: 0 });
                   }
                 });
               },
               onLeaveBack: () => {
                 gsap.to(workContent, { opacity: 0, display: "none", duration: 0 });
                 gsap.to(workTitle, { color: "#f9f9f9", duration: 0 });
-                gsap.to(work, { backgroundColor: "black", color: "#f9f9f9", duration: 0 });
+                gsap.to(work, { backgroundColor: "#1c1b19", color: "#f9f9f9", duration: 0 });
 
                 if (index > 0) {
                   const prevContent = workDetails[index - 1].querySelector(`.work-content-${index - 1}`);
                   const prevTitle = workDetails[index - 1].querySelector(`.work-title-${index - 1}`);
                   gsap.to(prevContent, { opacity: 1, display: "block", duration: 0 });
-                  gsap.to(prevTitle, { color: "black", duration: 0 });
-                  gsap.to(workDetails[index - 1], { backgroundColor: "#f9f9f9", color: "black", duration: 0 });
+                  gsap.to(prevTitle, { color: "#1c1b19", duration: 0 });
+                  gsap.to(workDetails[index - 1], { backgroundColor: "#f9f9f9", color: "#1c1b19", duration: 0 });
                 }
               },
             });
@@ -224,7 +242,7 @@ export default function Home() {
             <Image src="/logo.png" width={70} height={70} alt='logo' />
           </span>
           <span className='flex items-center gap-2 mr-[5%]'>
-            scroll down <span className='bg-[#f9f9f9] rounded-[50%] text-black p-3 text-xl'><FaArrowDown /></span>
+            scroll down <span className='bg-[#f9f9f9] rounded-[50%] text-[#1c1b19] p-3 text-xl'><FaArrowDown /></span>
           </span>
         </div>
 
@@ -257,18 +275,18 @@ export default function Home() {
       <div ref={mainRef} className="main h-[20vh]">
         <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
-          <div className="about-details px-[5%] text-black">
+          <div className="about-details px-[5%] text-[#1c1b19]">
             <h1 ref={aboutTitleRef} className='about-title text-[4em] lg:text-[6em] text-weight-[bold]'>About.</h1>
             <p ref={textRef} className='about-reveal text-[2.3em] lg:text-[5em] leading-none'>My full name is Andriasatarintsoa Manohisoa, I am 21 years old and I live in Antananarivo, Madagascar. Since 2021, I have been pursuing my studies at IT University Andoharanofotsy, where I specialize in application development.</p>
           </div>
           <div className="marquee mt-10">
-          <ModifMarquee />
+            <ModifMarquee />
           </div>
         </div>
       </div>
 
 
-      <div className="bg-black work z-10 min-h-screen">
+      <div className="bg-[#1c1b19] work z-10 min-h-screen">
         <ModifHr left={10} text={"Some of my work that might interest you."} right={75} color={'#f9f9f9'} />
         <div>
           <h1 className='about-title text-[4em] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-20 leading-none'>Personal Work.</h1>
@@ -293,63 +311,76 @@ export default function Home() {
               </div>
             </div>
           ))}
-          {/* <div key={Cards.length} className={`work-details work-${Cards.length} flex items-center`}></div> */}
+          <div key={Cards.length} className={`work-details work-${Cards.length} flex items-center`}></div>
         </div>
       </div>
 
-      <div className="h-[45vh] lg:h-[60vh] bg-black text-[#f9f9f9]">
+      <div className="h-[45vh] lg:h-[60vh] bg-[#1c1b19] text-[#f9f9f9]">
         <ModifHr left={10} text={"May be you wonder what am I."} right={75} color={'#f9f9f9'} />
-        <SuperposedMarquee text='Who am I ?' background='May be you wonder what am I.' />
+        <SuperposedMarquee text='Who am I ?' background='May be you wonder who am I.' />
       </div>
 
-      <div className="profesionnal-work h-[60vh] bg-black text-black">
-        <ModifHr left={10} text={"What I have already done."} right={80} color={'black'} />
-        <div className=" grid grid-cols-12 h-[50vh]">
-          <div className="col-span-12 p-[5%] language">
-            <p className='text-[6em]'>I'm A FullStack Developer</p>
-          </div>
+      <div className="profesionnal-work bg-[#1c1b19] text-[#1c1b19]">
+        <ModifHr left={10} text={"My skills that could be useful to you."} right={76} color={'black'} />
+        <div className="skills w-full">
+          {skillsData.map((skill, index) => (
+            <div
+              key={index}
+              className="skill h-[60vh] p-10"
+              style={{ backgroundColor: skill.bgColor }}
+            >
+              <p className='text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase py-5'>
+                {skill.title}
+              </p>
+              <h1 className="leading-none text-[25px] lg:text-[40px]">
+                {skill.description}
+              </h1>
+              <div className="text-[18px] lg:text-[30px]">
+                <ul className='language inline-flex gap-5 py-10'>
+                  {skill.languages.map((lang, i) => (
+                    <li key={i}>{lang}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div ref={contact} className="h-[45vh] lg:h-[60vh] bg-black text-[#f9f9f9]">
+      <div ref={contact} className="h-[45vh] lg:h-[60vh] bg-[#1c1b19] text-[#f9f9f9]">
         <ModifHr left={10} text={"How you can contact me."} right={80} color={'#f9f9f9'} />
         <SuperposedMarquee text='Contact' background='Get in touch with me.' />
       </div>
 
       <div ref={contactInformation} className="contact-information h-0 border-none">
-        <footer className="bg-[#f9f9f9] text-black border-none">
-          <div className='flex justify-between items-centerborder-none'>
-            <div className="left bg-black p-[20px] lg:p-[40px] border-none rounded-br-[20px]"></div>
-            <div className="right bg-black p-[20px] lg:p-[40px] border-none rounded-bl-[20px]"></div>
+        <footer className="bg-[#f9f9f9] text-[#1c1b19] border-none">
+          <div className='flex justify-between items-center border-none'>
+            <div className="left bg-[#1c1b19] py-[20px] px-[40px] border-none rounded-br-[20px]"></div>
+            <div className="right bg-[#1c1b19] py-[20px] px-[40px] border-none rounded-bl-[20px]"></div>
           </div>
-          <div className='items-center border-none h-[50vh] lg:h-fit px-[5%]'>
-            <div className="social flex justify-between" >
-              <h1 className='font-extrabold text-[4em] lg:text-[6em]'>Mano.</h1>
-            </div>
-            <div className='h-[20vh]'>
-              <ul className='text-[20px] lg:text-[40px] inline-flex gap-5 mt'>
-                <li><a href="https://www.facebook.com/mano.andriasat"><FaSquareFacebook /></a></li>
-                <li><a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"> <FaLinkedin /></a></li>
-                <li><a href="https://github.com/ManoAndriasat"><FaSquareGithub /></a></li>
-              </ul>
-              <ul className='flex gap-5 mt-5'>
-                <li>
-                  <FaLongArrowAltRight className='text-[35px]' />
-                </li>
-                <li>
-                  <a href="mailto:ma.andriasat@gmail.com" className="font-extrabold text-[20px] ">0343373351</a>
-                </li>
-              </ul>
-              <ul className='flex gap-5'>
-                <li>
-                  <FaLongArrowAltRight className='text-[35px]' />
-                </li>
-                <li>
-                  <a href="mailto:ma.andriasat@gmail.com" className="font-extrabold text-[20px]">ma.andriasat@gmail.com</a>
-                </li>
-              </ul>
-            </div>
-            <div>
+          <div className='py-[3%]'>
+            <div className='flex justify-between items-center'>
+              <div className="pl-[5%]">
+                <h1 className='font-extrabold text-[4em] lg:text-[6em]'>Mano.</h1>
+                <p className='font-bold text-[20px]'>© 2025.</p>
+              </div>
+              <div className='pr-[5%]'>
+                <ul className='text-[20px] lg:text-[40px] inline-flex gap-5'>
+                  <li><a href="https://www.facebook.com/mano.andriasat"><FaSquareFacebook /></a></li>
+                  <li><a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"> <FaLinkedin /></a></li>
+                  <li><a href="https://github.com/ManoAndriasat"><FaSquareGithub /></a></li>
+                </ul>
+                <ul className='flex gap-5'>
+                  <li>
+                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold text-[20px]">0343373351</a>
+                  </li>
+                </ul>
+                <ul className='flex gap-5'>
+                  <li>
+                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold text-[20px]">ma.andriasat@gmail.com</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </footer>

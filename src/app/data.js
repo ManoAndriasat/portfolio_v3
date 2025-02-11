@@ -81,4 +81,32 @@ const Cards = [
     }
   ]
 
-  export default Cards;
+  const skillsData = [
+    {
+      title: "Front-End Developer",
+      description:
+        "I have a very particular interest in front-end development because I can combine it with my great sense of design. I often use JavaScript frameworks and libraries like:",
+      languages: ["React", "Next", "Vue", "React Native", "GSAP", "jQuery"],
+      bgColor: "#be5b2a",
+    },
+    {
+      title: "Back-End Developer",
+      description: "Skilled in server-side development and database management.",
+      languages: ["Spring Boot", "ASP.net", "Express Js", "PostgreSQL", "Oracle", "MySql"],
+      bgColor: "#b6a897",
+    },
+    {
+      title: "Designer",
+      description: "Passionate about UI/UX design and sometimes, I just stare at some showcase project in awwwards, I have expertise in:",
+      languages: ["Figma", "Adobe XD", "Photoshop", "Illustrator"],
+      bgColor: "#828d94",
+    },
+    {
+      title: "Other Skills",
+      description: "Additional skills that enhance my development workflow:",
+      languages: ["Git", "Docker"],
+      bgColor: "#d69a3f",
+    },
+  ];
+
+  export { Cards, skillsData };

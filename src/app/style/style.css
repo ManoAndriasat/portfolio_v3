@@ -1,7 +1,7 @@
 body, html{
     padding: 0;
     margin: 0;
-    background-color: #000000;
+    background-color: #1c1b19;
 }
 
 @font-face {
@@ -135,22 +135,7 @@ body, html{
   width: 0%;
 }
 
-.me hr{
-  border:1px solid #f9f9f9;
-  background-color: #f9f9f9;
-}
-.annonce hr{
-  border:1px solid black;
-  background-color: black;
-}
-.work hr{
-  border:1px solid #f9f9f9;
-  background-color: #f9f9f9;
-}
-.profesionnal-work hr{
-  border:1px solid black;
-  background-color: black;
-}
+
 .profesionnal-work{
   background-image: url('/bg-2.png');
 }
@@ -243,7 +228,7 @@ body, html{
   transform: translateX(0);
 }
 .second-logo{
-  border: 1px solid black;
+  border: 1px solid #1c1b19;
 }
 
 
@@ -303,4 +288,20 @@ body, html{
 footer{
   background-image: url('/bg-2.png');
   height: max-content;
+}
+.skill {
+  position: relative;
+  background-image: url('https://www.transparenttextures.com/patterns/noise.png'); /* Noise texture */
+  background-size: cover;
+}
+
+.skill h1{
+  font-family: 'agatho';
+  width: 80%;
+}
+
+.language li{
+  border:  1px solid #1c1b19;
+  border-radius: 3px;
+  padding: 5px 10px;
 }
