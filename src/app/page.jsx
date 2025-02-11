@@ -2,7 +2,7 @@
 import './style/style.css';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
-import { FaBars, FaArrowDown, FaExternalLinkAlt, FaLinkedin, FaArrowRight  } from 'react-icons/fa';
+import { FaBars, FaArrowDown, FaExternalLinkAlt, FaLinkedin, FaArrowRight } from 'react-icons/fa';
 import { FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
 import { gsap } from 'gsap';
 import 'tailwindcss/tailwind.css';
@@ -34,9 +34,9 @@ export default function Home() {
     if (arrowRef.current) {
       gsap.to(arrowRef.current, {
         y: 5,
-        duration: 0.8, 
+        duration: 0.8,
         repeat: -1,
-        yoyo: true, 
+        yoyo: true,
         ease: 'power1.inOut',
       });
     }
@@ -44,7 +44,7 @@ export default function Home() {
     if (rightArrowRight.current) {
       gsap.to(rightArrowRight.current, {
         x: 10,
-        duration: 0.8, 
+        duration: 0.8,
         repeat: -1,
         yoyo: true,
         ease: 'power1.inOut',
@@ -391,35 +391,36 @@ export default function Home() {
       <div ref={contactInformation} className="contact-information h-0 border-none">
         <footer className="bg-[#f9f9f9] text-[#1c1b19] border-none">
           <div className='flex justify-between items-center border-none'>
-            <div className="left bg-[#1c1b19] p-[20px]  border-none rounded-br-[20px]"></div>
-            <div className="right bg-[#1c1b19] p-[20px] border-none rounded-bl-[20px]"></div>
+            <div className="left bg-[#1c1b19] p-[20px] lg:p-[30px]  border-none rounded-br-[20px]"></div>
+            <ul className='text-[25px] lg:text-[40px] inline-flex gap-5'>
+              <li><a href="https://www.facebook.com/mano.andriasat"><FaSquareFacebook /></a></li>
+              <li><a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"> <FaLinkedin /></a></li>
+              <li><a href="https://github.com/ManoAndriasat"><FaSquareGithub /></a></li>
+            </ul>
+            <div className="right bg-[#1c1b19] p-[20px] lg:p-[30px] border-none rounded-bl-[20px]"></div>
           </div>
           <div className='py-[3%]'>
             <div className='flex justify-between items-center'>
               <div className="pl-[5%]">
-                <p className='font-extrabold text-[25px] lg:text-[6em]'>Mano.</p>
+                <p className='font-extrabold text-[18px] lg:text-[6em]'>Mano.</p>
                 <p className='font-bold text-[18px]'>© 2025.</p>
               </div>
-              <div className='pr-[5%]'>
-                <ul className='text-[18px] lg:text-[40px] inline-flex gap-5'>
-                  <li><a href="https://www.facebook.com/mano.andriasat"><FaSquareFacebook /></a></li>
-                  <li><a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"> <FaLinkedin /></a></li>
-                  <li><a href="https://github.com/ManoAndriasat"><FaSquareGithub /></a></li>
-                </ul>
-                <ul className='flex gap-5 text-[18px] lg:text-[30px]'>
+              <div className='pr-[5%] text-right flex flex-col items-end'>
+                <ul className='flex gap-5 text-[18px] lg:text-[30px] justify-end'>
                   <li>
-                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold">0343373351</a>
+                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold">+261 33 733 51</a>
                   </li>
                 </ul>
-                <ul className='inline-flex items-center gap-5 text-[18px] lg:text-[30px]'>
+                <ul className='inline-flex items-center gap-5 text-[18px] lg:text-[30px] justify-end'>
                   <li className='mt-1'>
-                  <FaArrowRight  ref={rightArrowRight} />
+                    <FaArrowRight ref={rightArrowRight} />
                   </li>
                   <li>
-                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold underline"> ma.andriasat@gmail.com</a>
+                    <a href="mailto:ma.andriasat@gmail.com" className="font-bold underline">ma.andriasat@gmail.com</a>
                   </li>
                 </ul>
               </div>
+
             </div>
             <div className='p-5'>
 
