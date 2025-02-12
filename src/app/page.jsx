@@ -268,7 +268,7 @@ export default function Home() {
           <div className="second-dropdown relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <button className="second-dropdown-button"><FaBars /></button>
             {isOpen && (
-              <div className="second-dropdown-menu">
+              <nav className="second-dropdown-menu">
                 <ul className="flex">
                   <li><a onClick={() => scrollToRef(landingRef)}>Home</a></li>
                   <li><a onClick={() => scrollToRef(mainRef)}>About</a></li>
@@ -276,7 +276,7 @@ export default function Home() {
                   <li><a onClick={() => scrollToRef(skillsRef)}>Skills</a></li>
                   <li><a onClick={() => scrollToRef(contactRef)}>Contact</a></li>
                 </ul>
-              </div>
+              </nav>
             )}
           </div>
         </div>
@@ -296,7 +296,7 @@ export default function Home() {
           <span className="dropdown" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <button className="dropdown-button"><FaBars /></button>
             {isOpen && (
-              <div className="dropdown-menu">
+              <nav className="dropdown-menu">
               <ul>
                 <li><button onClick={() => scrollToRef(landingRef)}>Home</button></li>
                 <li><button onClick={() => scrollToRef(mainRef)}>About</button></li>
@@ -304,7 +304,7 @@ export default function Home() {
                 <li><button onClick={() => scrollToRef(skillsRef)}>Skills</button></li>
                 <li><button onClick={() => scrollToRef(contactRef)}>Contact</button></li>
               </ul>
-            </div>
+            </nav>
             )}
           </span>
         </div>
