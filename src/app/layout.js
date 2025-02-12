@@ -35,23 +35,59 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content="Découvrez nos services innovants." />
         <meta name="twitter:image" content="./logo.ico" />
 
-
-
+        {/* Structured Data (JSON-LD) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "service",
-              name: "Mano Andriasat",
-              alternateName: "Manohisoa",
-              description:
-                "Innover votre présentation pour mieux vous démarquer.",
-              image: "/logo.ico",
-              url: "https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/",
+              "@type": "WebSite",
+              "url": "https://mano-andriasat.me",
+              "name": "Mano Andriasat",
+              "description": "Innover votre présentation pour mieux vous démarquer.",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://mano-andriasat.me/?s={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://mano-andriasat.me"
+              }
             }),
           }}
         />
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://mano-andriasat.me/#main"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "My work",
+                  "item": "https://mano-andriasat.me/#work"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Skills",
+                  "item": "https://mano-andriasat.me/#skill"
+                }
+              ]
+            }),
+          }}
+        />
+        
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-76MZXLNDG4"></script>
         <script id="google-analytics" strategy="afterInteractive">
           {`
