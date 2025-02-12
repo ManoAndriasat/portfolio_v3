@@ -94,8 +94,8 @@ const Cards = [
     {
       title: "UI/UX Developer",
       description:
-        "I have a very particular interest in UI/UX development because I can combine it with my great sense of design. I often use JavaScript frameworks and libraries like:",
-      languages: ["React", "Next", "Vue", "React Native", "GSAP","Tailwind"],
+        "I have a very particular interest in UI/UX development. I often use JavaScript frameworks and libraries like:",
+      languages: ["React", "Next", "Vue", "React Native", "GSAP", "Tailwind"],
       bgColor: "#be5b2a",
     },
     {
@@ -106,13 +106,13 @@ const Cards = [
     },
     {
       title: "Designer",
-      description: "Passionate about design and sometimes, I just stare at some showcase project in awwwards, I have expertise in:",
+      description: "Passionate about design and always looking for ways to improve. I occasionally use:",
       languages: ["Figma", "Adobe XD", "Photoshop", "Illustrator"],
       bgColor: "#828d94",
     },
     {
       title: "Other Skills",
-      description: "Additional skills that enhance my development workflow:",
+      description: "Additional skills that improve my development process and make my work more efficient:",
       languages: ["Git", "Docker"],
       bgColor: "#d69a3f",
     },
