@@ -221,7 +221,7 @@ export default function Home() {
 
             ScrollTrigger.create({
               trigger: work,
-              start: `top ${380}px`,
+              start: `top ${300}px`,
               end: `bottom top`,
               onEnter: () => {
                 gsap.to(workContent, { opacity: 1, display: "block", duration: 0 });
