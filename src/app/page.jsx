@@ -347,7 +347,7 @@ export default function Home() {
                 <a href={`${card.link}`} target='blank' className='text-decoration-[none] text-[20px] lg:text-[25px]'> <FaExternalLinkAlt /></a>
               </div>
               <div>
-                <h1 className={`work-title work-title-${index} text-[25px] lg:text-[40px]`}>{card.title}</h1>
+                <p className={`work-title work-title-${index} text-[25px] lg:text-[40px]`}>{card.title}</p>
                 <div className={`work-content work-content-${index} text-[18px] lg:text-[30px] gap-5 p-5`}>
                   <p>{card.description}</p>
                   <ul>
@@ -383,9 +383,9 @@ export default function Home() {
               <p className='text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase py-5'>
                 {skill.title}
               </p>
-              <h1 className="leading-none text-[25px] lg:text-[40px]">
+              <p className="leading-none text-[25px] lg:text-[40px]">
                 {skill.description}
-              </h1>
+              </p>
               <div className="text-[18px] lg:text-[30px]">
                 <ul className='language inline-flex gap-5 py-10 flex-wrap'>
                   {skill.languages.map((lang, i) => (
