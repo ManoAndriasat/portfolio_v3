@@ -140,12 +140,12 @@ export default function Home() {
       gsap.from(aboutTitleRef.current, {
         opacity: 0,
         duration: 1,
-        y: '-20px',
         scrollTrigger: {
           trigger: mainRef.current,
           start: 'top 70%',
           end: 'top 50%',
           scrub: true,
+          ease: 'power1.inOut',
         },
       });
     }
