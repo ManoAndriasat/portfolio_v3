@@ -149,7 +149,7 @@ export default function Home() {
         },
       });
     }
-    
+
     if (mainRef.current) {
       gsap.to(mainRef.current, {
         y: '-0vh',
@@ -345,7 +345,7 @@ export default function Home() {
                 <p className='text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase py-5'>
                   {skill.title}
                 </p>
-                <p className="leading-none text-[25px] lg:text-[40px]">
+                <p className="skill-description leading-none text-[25px] lg:text-[40px]">
                   {skill.description}
                 </p>
                 <div className="text-[18px] lg:text-[30px]">

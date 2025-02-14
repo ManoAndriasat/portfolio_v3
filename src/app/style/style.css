@@ -320,3 +320,7 @@ footer{
   height: 5px;
   background: linear-gradient(to right, #be5b2a, #b6a897, #22aa2e, #d69a3f);
 }
+
+.skill-description{
+  font-family: 'agatho';
+}
