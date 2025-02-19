@@ -1,12 +1,12 @@
 const Cards = [
     {
-      "title": "Datamart Design and Dashboard Development",
-      "description": "Design of a datamart (a specialized data storage system). Automatic data extraction from a data warehouse (DHIS2) to our datamart via an ETL process. Development of an online dashboard and data analysis tools for a government program (PARN).",
-      "participants": "Internship",
-      "techno": "Django Rest - React - DHIS2 - SQL - scikit-learn",
-      "society": "Project Coordination Unit",
-      "link": "Link to project (if available)",
-      "date": "JUN - OCT 2024"
+      title: "Datamart Design and Dashboard Development",
+      description: "Design of a datamart (a specialized data storage system). Automatic data extraction from a data warehouse (DHIS2) to our datamart via an ETL process. Development of an online dashboard and data analysis tools for a government program (PARN).",
+      participants: "Internship",
+      techno: "Django Rest - React - DHIS2 - SQL - scikit-learn",
+      society: "Project Coordination Unit",
+      link: "Link to project (if available)",
+      date: "JUN - OCT 2024"
     },
     {
       title: "Dynamic Room Reservation Calendar",
@@ -15,14 +15,6 @@ const Cards = [
       techno: "Django Rest - React",
       society: "School",
       link: "N/A"
-    },
-    {
-      title: "House Construction Quote Generator",
-      description: "Project enabling clients to create customized quotes for house construction, with complete management of quotes, work progress tracking, and a dashboard for financial management.",
-      participants: "Solo project",
-      techno: "C# - HTML - CSS",
-      society: "School",
-      link: "https://github.com/ManoAndriasat/house_construction.git"
     },
     {
       title: "Internal Supply Chain System",
@@ -63,6 +55,14 @@ const Cards = [
       techno: "C# - HTML - CSS",
       society: "School",
       link: "https://github.com/ManoAndriasat/optimisation-meilleur-medicament.git"
+    },
+    {
+      title: "House Construction Quote Generator",
+      description: "Project enabling clients to create customized quotes for house construction, with complete management of quotes, work progress tracking, and a dashboard for financial management.",
+      participants: "Solo project",
+      techno: "C# - HTML - CSS",
+      society: "School",
+      link: "https://github.com/ManoAndriasat/house_construction.git"
     },
     {
       title: "Human Resource Management System",
