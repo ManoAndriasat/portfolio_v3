@@ -167,14 +167,13 @@ export default function Home() {
     //Header second appearance
     if (secondHeaderRef.current) {
       gsap.from(secondHeaderRef.current, {
-        opacity: 0,
         y: '200px',
         scrollTrigger: {
           trigger: '.work',
           start: 'top bottom',
           end: 'top bottom',
-          onEnter: () => gsap.to(secondHeaderRef.current, { opacity: 1 }),
-          onLeaveBack: () => gsap.to(secondHeaderRef.current, { opacity: 0 }),
+          onEnter: () => gsap.to(secondHeaderRef.current, { opacity: 1 , duration:0}),
+          onLeaveBack: () => gsap.to(secondHeaderRef.current, { opacity: 0 , duration:0}),
         },
       });
     }
