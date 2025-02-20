@@ -230,7 +230,7 @@ export default function Home() {
           {Cards.map((card, index) => (
             <div key={index} className={`work-details work-${index} flex items-center`}>
               <div className='ml-5 p-5 lg:p-10'>
-                <a href={`${card.link}`} target='blank' className='text-decoration-[none] text-[#1c1b19] text-[20px] lg:text-[25px]'> <FaExternalLinkAlt /></a>
+                <a href={`${card.link}`} target='blank' className='text-decoration-[none] text-[20px] lg:text-[25px]'> <FaExternalLinkAlt /></a>
               </div>
               <div>
                 <p className={`work-title work-title-${index} text-[25px] lg:text-[40px] py-[10px] lg:py-[30px]`}>{card.title}</p>

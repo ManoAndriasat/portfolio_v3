@@ -39,7 +39,7 @@ export default function SecondHeader({ landingRef, aboutRef, workRef, skillsRef,
     }, [landingRef]);
 
     return (
-        <div ref={secondHeaderRef} className="second-header none justify-center fixed bottom-0 left-0 right-0 z-50 mb-4 none lg:flex">
+        <div ref={secondHeaderRef} className="second-header hidden lg:flex justify-center fixed bottom-0 left-0 right-0 z-50 mb-4 opacity-0">
             <div className="flex items-center">
                 <span className="second-logo p-3 bg-[#f9f9f9]">
                     <Image src="/logo.png" width={70} height={70} alt="logo" />
