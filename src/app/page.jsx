@@ -165,6 +165,7 @@ export default function Home() {
         invalidateOnRefresh: true,
       });
     });
+    
     //Work details extension
     document.querySelectorAll(".work-details").forEach((work, index) => {
       const workContent = work.querySelector(".work-content");
