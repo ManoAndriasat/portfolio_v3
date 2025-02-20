@@ -35,7 +35,6 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content="Découvrez nos services innovants." />
         <meta name="twitter:image" content="./logo.ico" />
 
-        {/* Structured Data (JSON-LD) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -48,54 +47,50 @@ export default function RootLayout({ children }) {
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": "https://mano-andriasat.me/?s={search_term_string}",
-                "query-input": "required name=search_term_string",
+                "query-input": "required name=search_term_string"
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
                 "@id": "https://mano-andriasat.me"
-              }
-            }),
-          }}
-        />
-        
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
+              },
+              "hasPart": [
                 {
-                  "@type": "ListItem",
-                  "position": 1,
+                  "@type": "SiteNavigationElement",
                   "name": "Home",
-                  "item": "https://mano-andriasat.me/#main"
+                  "url": "https://mano-andriasat.me/#landing"
                 },
                 {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "My work",
-                  "item": "https://mano-andriasat.me/#work"
+                  "@type": "SiteNavigationElement",
+                  "name": "About",
+                  "url": "https://mano-andriasat.me/#about"
                 },
                 {
-                  "@type": "ListItem",
-                  "position": 3,
+                  "@type": "SiteNavigationElement",
+                  "name": "Work",
+                  "url": "https://mano-andriasat.me/#work"
+                },
+                {
+                  "@type": "SiteNavigationElement",
                   "name": "Skills",
-                  "item": "https://mano-andriasat.me/#skill"
+                  "url": "https://mano-andriasat.me/#skills"
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  "name": "Contact",
+                  "url": "https://mano-andriasat.me/#contact"
                 }
               ]
-            }),
+            })
           }}
         />
-        
+
+
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-76MZXLNDG4"></script>
         <script id="google-analytics" strategy="afterInteractive">
-          {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-76MZXLNDG4');
-            `}
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-76MZXLNDG4');`}
         </script>
 
         <link rel="icon" href="/logo.ico" />
