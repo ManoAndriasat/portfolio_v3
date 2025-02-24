@@ -27,6 +27,7 @@ export default function Home() {
   const rightArrowRight = useRef(null);
   const workRef = useRef(null);
   const skillsRef = useRef(null);
+  const workTitleRef = useRef(null);
 
 
   // ARROW ANIMATION
@@ -133,6 +134,20 @@ export default function Home() {
       });
     }
 
+    if (workTitleRef.current) {
+      gsap.from(workTitleRef.current, {
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: workRef.current,
+          start: 'top 70%',
+          end: 'top 50%',
+          scrub: true,
+          ease: 'power1.inOut',
+        },
+      });
+    }
+
     if (aboutRef.current) {
       gsap.to(aboutRef.current, {
         y: '0vh',
@@ -212,7 +227,7 @@ export default function Home() {
         <div className="about">
           <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
           <div className="about-details px-[5%] text-[#1c1b19]">
-            <h1 ref={aboutTitleRef} className='about-title text-[4em] lg:text-[6em] text-weight-[bold]'>About.</h1>
+            <h1 ref={aboutTitleRef} className='text-[4em] lg:text-[6em] text-weight-[bold]'>About.</h1>
             <p ref={textRef} className='about-reveal text-[2.1em] lg:text-[4em] leading-none'>
               I&apos;m Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I&apos;ve been studying application development at IT
               University Andoharanofotsy since 2021. I enjoy working on projects that help me learn more about coding, problem-solving,
@@ -227,7 +242,7 @@ export default function Home() {
       <section id='work' ref={workRef} className="bg-[#1c1b19] work z-10 min-h-screen">
         <ModifHr left={10} text={"Some of my work that might interest you."} right={75} color={'#f9f9f9'} />
         <div>
-          <h1 className='about-title text-[4em] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-10 pt-10 lg:pt-0 leading-none'>Work.</h1>
+          <h1 ref={workTitleRef} className='text-[4em] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-10 pt-10 lg:pt-0 leading-none'>Work.</h1>
           {Cards.map((card, index) => (
             <div key={index} className={`work-details work-${index} flex items-center justify-between`}>
               <div>
