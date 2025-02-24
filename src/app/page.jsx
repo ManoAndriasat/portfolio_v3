@@ -170,19 +170,20 @@ export default function Home() {
     document.querySelectorAll(".work-details").forEach((work, index) => {
       const workContent = work.querySelector(".work-content");
       const workTitle = work.querySelector(`.work-title-${index}`);
+      const workLink = work.querySelector(`.work-link`);
       const contentHeight = workContent?.offsetHeight || 0;
 
       ScrollTrigger.create({
         trigger: work,
-        start: `top-=${contentHeight * index} 30%`,
-        end: `bottom-=${contentHeight * (index + 1)} 30%`,
+        start: `top-=${contentHeight * index} 35%`,
+        end: `bottom-=${contentHeight * (index + 1)} 35%`,
         onToggle: (self) => {
           if (self.isActive) {
             gsap.set([workContent], { opacity: 1, display: "block" });
-            gsap.set([work, workTitle], { backgroundColor: "#f9f9f9", color: "#1c1b19" });
+            gsap.set([work, workTitle, workLink], { backgroundColor: "#f9f9f9", color: "#1c1b19" });
           } else {
             gsap.set([workContent], { opacity: 0, display: "none" });
-            gsap.set([work, workTitle], { backgroundColor: "#1c1b19", color: "#f9f9f9" });
+            gsap.set([work, workTitle, workLink], { backgroundColor: "#1c1b19", color: "#f9f9f9" });
           }
         },
       });
@@ -228,10 +229,7 @@ export default function Home() {
         <div>
           <h1 className='about-title text-[4em] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-10 pt-10 lg:pt-0 leading-none'>Work.</h1>
           {Cards.map((card, index) => (
-            <div key={index} className={`work-details work-${index} flex items-center`}>
-              <div className='ml-5 p-5 lg:p-10'>
-                <a href={`${card.link}`} target='blank' className='text-decoration-[none] text-[20px] lg:text-[25px]'> <FaExternalLinkAlt /></a>
-              </div>
+            <div key={index} className={`work-details work-${index} flex items-center justify-between`}>
               <div>
                 <p className={`work-title work-title-${index} text-[25px] lg:text-[40px] py-[10px] lg:py-[30px]`}>{card.title}</p>
                 <div className={`work-content work-content-${index} text-[18px] lg:text-[30px] gap-5 p-5`}>
@@ -245,6 +243,9 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
+              </div>
+              <div className='ml-5 p-5 lg:p-10 work-link text-white'>
+                <a href={`${card.link}`} target='blank' className='text-decoration-[none] text-[20px] lg:text-[25px]'> <FaExternalLinkAlt /></a>
               </div>
             </div>
           ))}
