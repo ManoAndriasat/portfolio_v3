@@ -324,3 +324,12 @@ footer{
 .skill-description{
   font-family: 'agatho';
 }
+
+.my-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.my-text .char {
+  transform: translateX(-115px);
+  transition: transform .5s;
+}

@@ -14,6 +14,7 @@ import SuperposedMarquee from './components/SuperposedMarquee';
 import SecondHeader from './components/SecondHeader';
 import FirstHeader from './components/FirstHeader';
 import { useGSAP } from "@gsap/react";
+import SplitType from 'split-type';
 
 export default function Home() {
 
@@ -43,44 +44,43 @@ export default function Home() {
     }
   }, []);
 
-  // SPLITTING
+
+  // TEXT APPEAR AND SPLIT
   useEffect(() => {
-    const initAnimation = async () => {
-      const Splitting = (await import('splitting')).default;
+    const myText = new SplitType(".my-text", { types: 'words, chars' });
+    gsap.to(myText.chars, {
+      x: 0,
+      delay: 0.2,
+      duration: 0.2,
+    });
 
-      if (textRef.current) {
-        const results = Splitting({ target: textRef.current, by: 'chars' });
-        const chars = results[0].chars;
+    if (textRef.current) {
+      const results = new SplitType(textRef.current, { types: 'words, chars' });
+      gsap.from(results.chars, {
+        opacity: 0.1,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: '-10 70%',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+      });
+    }
 
-        gsap.from(chars, {
-          opacity: 0.1,
-          stagger: 0.05,
-          scrollTrigger: {
-            trigger: aboutRef.current,
-            start: 'top 70%',
-            end: 'bottom bottom',
-            scrub: true,
-          },
-        });
-      }
-
-      if (miniBannerRef.current) {
-        const results = Splitting({ target: miniBannerRef.current, by: 'chars' });
-        const chars = results[0].chars;
-
-        gsap.from(chars, {
-          opacity: 0,
-          stagger: 0.05,
-          duration: 0.5,
-          scrollTrigger: {
-            trigger: landingRef.current,
-            start: 'top 50%',
-            end: 'bottom bottom',
-          },
-        });
-      }
-    };
-    initAnimation();
+    if (miniBannerRef.current) {
+      const results = new SplitType(miniBannerRef.current, { types: 'words, chars' });
+      gsap.from(results.chars, {
+        opacity: 0,
+        stagger: 0.05,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: landingRef.current,
+          start: 'top 50%',
+          end: 'bottom bottom',
+        },
+      });
+    }
   }, []);
 
 
@@ -180,7 +180,7 @@ export default function Home() {
         invalidateOnRefresh: true,
       });
     });
-    
+
     //Work details extension
     document.querySelectorAll(".work-details").forEach((work, index) => {
       const workContent = work.querySelector(".work-content");
@@ -213,7 +213,15 @@ export default function Home() {
       <section id='landing' ref={landingRef} className='landing text-[#f9f9f9] h-screen' >
         <FirstHeader landingRef={landingRef} aboutRef={aboutRef} workRef={workRef} skillsRef={skillsRef} contactRef={contactRef} />
         <div className="simple-word lg:pl-[35%] lg:pr-[15%] mt-[15%] lg:mt-0 mx-5 lg:mx-0">
-          <p className="leading-none text-[3em] lg:text-[6em]">THINGS THAT YOU ARE NOT PROUD OF SHOULDN'T BE SIGNED BY YOUR NAME.</p>
+          <p className="leading-none text-[3em] lg:text-[6em]">
+            {`THINGS THAT YOU ARE NOT PROUD OF SHOULDN'T BE SIGNED BY YOUR NAME.`
+              .split(" ")
+              .map((word, index) => (
+                <span key={index} className="inline-block my-text whitespace-pre-wrap">
+                  {word + " "}
+                </span>
+              ))}
+          </p>
           <p ref={miniBannerRef} className='font-sans mini-banner'>Show your worth through your work.</p>
         </div>
 
