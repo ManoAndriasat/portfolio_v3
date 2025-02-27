@@ -49,7 +49,7 @@ export default function Home() {
     const myText = new SplitType(".my-text", { types: 'words, chars' });
     gsap.to(myText.chars, {
       y: 0,
-      delay: 1,
+      delay: 0.4,
       duration: 0.2,
     });
 
