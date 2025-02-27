@@ -48,8 +48,8 @@ export default function Home() {
   useEffect(() => {
     const myText = new SplitType(".my-text", { types: 'words, chars' });
     gsap.to(myText.chars, {
-      x: 0,
-      delay: 0.2,
+      y: 0,
+      delay: 1,
       duration: 0.2,
     });
 
