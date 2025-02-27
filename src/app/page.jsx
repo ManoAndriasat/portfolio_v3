@@ -1,8 +1,7 @@
 'use client';
 import './style/style.css';
-import Image from 'next/image';
-import React, { useState, useRef, useEffect } from 'react';
-import { FaBars, FaArrowDown, FaExternalLinkAlt, FaLinkedin, FaArrowRight } from 'react-icons/fa';
+import React, { useRef, useEffect } from 'react';
+import {  FaExternalLinkAlt, FaLinkedin, FaArrowRight } from 'react-icons/fa';
 import { FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
 import { gsap } from 'gsap';
 import 'tailwindcss/tailwind.css';
