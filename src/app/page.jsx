@@ -173,7 +173,7 @@ export default function Home() {
     //Stacking skills
     const skills = gsap.utils.toArray(".skill");
     const isMobile = window.innerWidth < 768;
-    const spacer = isMobile ? 100 : 200;
+    const spacer = isMobile ? 80 : 200;
     const duration = isMobile ? 200 : 300;
     skills.forEach((skill, index) => {
       ScrollTrigger.create({
@@ -294,10 +294,10 @@ export default function Home() {
           {skillsData.map((skill, index) => (
             <div
               key={index}
-              className="skill h-content lg:h-[60vh] p-5 lg:p-10"
+              className="skill h-content lg:h-[60vh] p-5 lg:px-10"
               style={{ backgroundColor: skill.bgColor }}
             >
-              <p className='text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase py-5'>
+              <p className='text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase pb-10'>
                 {skill.title}
               </p>
               <p className="skill-description leading-none text-[25px] lg:text-[40px]">
