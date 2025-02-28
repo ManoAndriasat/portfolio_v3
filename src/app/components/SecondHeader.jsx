@@ -29,8 +29,8 @@ export default function SecondHeader({ landingRef, aboutRef, workRef, skillsRef,
             {
                 scrollTrigger: {
                     trigger: landingRef.current,
-                    start: 'bottom top',
-                    end: 'bottom -100',
+                    start: '50% top',
+                    end: '60% top',
                     onEnter: () => gsap.to(secondHeaderRef.current, { opacity: 1, duration: 0.5, y: 0 }),
                     onLeaveBack: () => gsap.to(secondHeaderRef.current, { opacity: 1, duration: 0.5, y: 200 }),
                 },

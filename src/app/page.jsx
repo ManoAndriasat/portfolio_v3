@@ -51,6 +51,7 @@ export default function Home() {
       y: 0,
       delay: 0.4,
       duration: 0.2,
+      ease: 'power1.inOut',
     });
 
     if (textRef.current) {
@@ -89,7 +90,7 @@ export default function Home() {
     import('@studio-freight/lenis').then((LenisModule) => {
       const Lenis = LenisModule.default;
       const lenis = new Lenis({
-        duration: 1.5,
+        duration: 0.9,
         easing: (t) => 1 - Math.pow(1 - t, 4),
         smooth: true,
         smoothTouch: true,
@@ -147,20 +148,27 @@ export default function Home() {
       });
     }
 
-    if (aboutRef.current) {
-      gsap.to(aboutRef.current, {
-        y: '0vh',
-        scrollTrigger: {
-          trigger: landingRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          pin: true,
-          scrub: true,
-          pinSpacing: false,
-          invalidateOnRefresh: true,
-        },
-      });
-    }
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: landingRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        pin: true,
+        scrub: true,
+        pinSpacing: false,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    tl.to(aboutRef.current, {
+      y: '0vh',
+      duration: 1,
+    },0);
+
+    tl.to(landingRef.current, {
+      y: '-10vh',
+      duration: 1,
+    },0);
 
     //Stacking skills
     const skills = gsap.utils.toArray(".skill");
