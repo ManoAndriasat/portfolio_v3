@@ -69,7 +69,7 @@ body, html{
 
   /* Button styling */
   .dropdown-button {
-    background-color: #be5b2a;
+    background-color: #5dd63f;
     color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
@@ -161,7 +161,7 @@ body, html{
 }
 
 .second-dropdown-button {
-  background-color: #be5b2a;
+  background-color: #5dd63f;
   color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
@@ -318,7 +318,7 @@ footer{
   bottom: -2px;
   width: 100%;
   height: 5px;
-  background: linear-gradient(to right, #be5b2a, #b6a897, #22aa2e, #d69a3f);
+  background: linear-gradient(to right, #5dd63f, #b6a897, #22aa2e, #d69a3f);
 }
 
 .skill-description{

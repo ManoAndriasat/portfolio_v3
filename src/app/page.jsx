@@ -1,7 +1,7 @@
 'use client';
 import './style/style.css';
 import React, { useRef, useEffect } from 'react';
-import {  FaExternalLinkAlt, FaLinkedin, FaArrowRight } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaLinkedin, FaArrowRight } from 'react-icons/fa';
 import { FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
 import { gsap } from 'gsap';
 import 'tailwindcss/tailwind.css';
@@ -49,7 +49,7 @@ export default function Home() {
     const myText = new SplitType(".my-text", { types: 'words, chars' });
     gsap.to(myText.chars, {
       y: 0,
-      delay: 0.4,
+      delay: 0.2,
       duration: 0.2,
       ease: 'power1.inOut',
     });
@@ -163,30 +163,55 @@ export default function Home() {
     tl.to(aboutRef.current, {
       y: '0vh',
       duration: 1,
-    },0);
+    }, 0);
 
     tl.to(landingRef.current, {
       y: '-10vh',
       duration: 1,
-    },0);
+    }, 0);
 
     //Stacking skills
     const skills = gsap.utils.toArray(".skill");
     const isMobile = window.innerWidth < 768;
     const spacer = isMobile ? 80 : 200;
     const duration = isMobile ? 200 : 300;
+
+    // skills.forEach((skill, index) => {
+    //   ScrollTrigger.create({
+    //     trigger: skill,
+    //     start: `top-=${index * spacer} top`,
+    //     endTrigger: '.skills',
+    //     end: `bottom top+=${duration + (skills.length * spacer)}`,
+    //     pin: true,
+    //     pinSpacing: false,
+    //     id: 'pin',
+    //     invalidateOnRefresh: true,
+    //   });
+    // });
+
     skills.forEach((skill, index) => {
-      ScrollTrigger.create({
-        trigger: skill,
-        start: `top-=${index * spacer} top`,
-        endTrigger: '.skills',
-        end: `bottom top+=${duration + (skills.length * spacer)}`,
-        pin: true,
-        pinSpacing: false,
-        id: 'pin',
-        invalidateOnRefresh: true,
+      gsap.to(skill,{
+        scrollTrigger: {
+          trigger: skill,
+          start: `top-=${index * spacer} top`,
+          endTrigger: '.skills',
+          end: `bottom top+=${duration + ((skills.length-1) * spacer)}`,
+          pin: true,
+          pinSpacing: false,
+          id: 'pin',
+          invalidateOnRefresh: true,
+          markers: true,
+          scrub: true,
+        },
+        y: isMobile ? 0 : -300,
+        onLeave: () => {
+          gsap.set(skill, {
+            y: 0 ,
+          });
+        },
       });
     });
+
 
     //Work details extension
     document.querySelectorAll(".work-details").forEach((work, index) => {
