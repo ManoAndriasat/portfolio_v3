@@ -200,7 +200,6 @@ export default function Home() {
           pinSpacing: false,
           id: 'pin',
           invalidateOnRefresh: true,
-          markers: true,
           scrub: true,
         },
         y: isMobile ? 0 : -300,
