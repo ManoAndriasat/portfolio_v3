@@ -3,6 +3,7 @@ import './style/style.css';
 import React, { useRef, useEffect } from 'react';
 import { FaExternalLinkAlt, FaLinkedin, FaArrowRight } from 'react-icons/fa';
 import { FaSquareFacebook, FaSquareGithub } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
 import { gsap } from 'gsap';
 import 'tailwindcss/tailwind.css';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -361,13 +362,12 @@ export default function Home() {
       </footer>
 
       <footer className="block lg:hidden text-[#1c1b19] border-none">
-
-
         <div className='flex justify-center items-center border-none p-5 bg-[#f9f9f9]'>
-          <ul className='text-[40px] inline-flex gap-5'>
+          <ul className='text-[30px] inline-flex gap-5'>
             <li><a href="https://www.facebook.com/mano.andriasat"><FaSquareFacebook /></a></li>
             <li><a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"> <FaLinkedin /></a></li>
             <li><a href="https://github.com/ManoAndriasat"><FaSquareGithub /></a></li>
+            <li><a href="mailto:ma.andriasat@gmail.com"><SiGmail/></a></li>
           </ul>
         </div>
       </footer>
