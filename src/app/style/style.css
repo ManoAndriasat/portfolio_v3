@@ -284,10 +284,6 @@ body, html{
   border: transparent;
 }
 
-footer{
-  background-image: url('/bg-2.png');
-  height: max-content;
-}
 .skill {
   position: relative;
   background-image: url('https://www.transparenttextures.com/patterns/noise.png'); /* Noise texture */

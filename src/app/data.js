@@ -115,12 +115,6 @@ const Cards = [
       description: "Additional skills that improve my development process and make my work more efficient:",
       languages: ["Git", "Docker", "Jira"],
       bgColor: "#d69a3f",
-    },
-    {
-      title: "Languages",
-      description: "I three languages, which allows me to communicate with a wide range of people:",
-      languages: ["French", "English", "Malagasy"],
-      bgColor: "#5dd63f",
     }
   ];
 

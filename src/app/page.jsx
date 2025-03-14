@@ -174,43 +174,20 @@ export default function Home() {
     const skills = gsap.utils.toArray(".skill");
     const isMobile = window.innerWidth < 768;
     const spacer = isMobile ? 80 : 200;
-    const duration = isMobile ? 200 : 300;
-
-    // skills.forEach((skill, index) => {
-    //   ScrollTrigger.create({
-    //     trigger: skill,
-    //     start: `top-=${index * spacer} top`,
-    //     endTrigger: '.skills',
-    //     end: `bottom top+=${duration + (skills.length * spacer)}`,
-    //     pin: true,
-    //     pinSpacing: false,
-    //     id: 'pin',
-    //     invalidateOnRefresh: true,
-    //   });
-    // });
+    const duration = isMobile ? 300 : 600;
 
     skills.forEach((skill, index) => {
-      gsap.to(skill,{
-        scrollTrigger: {
-          trigger: skill,
-          start: `top-=${index * spacer} top`,
-          endTrigger: '.skills',
-          end: `bottom top+=${duration + ((skills.length-1) * spacer)}`,
-          pin: true,
-          pinSpacing: false,
-          id: 'pin',
-          invalidateOnRefresh: true,
-          scrub: true,
-        },
-        y: isMobile ? 0 : -300,
-        onLeave: () => {
-          gsap.set(skill, {
-            y: 0 ,
-          });
-        },
+      ScrollTrigger.create({
+        trigger: skill,
+        start: `top-=${index * spacer} top`,
+        endTrigger: '.skills',
+        end: `bottom top+=${duration + (skills.length * spacer)}`,
+        pin: true,
+        pinSpacing: false,
+        id: 'pin',
+        invalidateOnRefresh: true,
       });
     });
-
 
     //Work details extension
     document.querySelectorAll(".work-details").forEach((work, index) => {
@@ -344,7 +321,7 @@ export default function Home() {
         <SuperposedMarquee text='Contact me' background='Get in touch with me.' />
       </div>
 
-      <footer className="bg-[#f9f9f9] text-[#1c1b19] border-none">
+      <footer className="hidden lg:block bg-[#f9f9f9] text-[#1c1b19] border-none">
         <div className='flex justify-between items-center border-none'>
           <div className="left bg-[#1c1b19] p-[20px] lg:p-[30px]  border-none rounded-br-[20px]"></div>
           <ul className='text-[25px] lg:text-[40px] inline-flex gap-5'>
@@ -380,6 +357,18 @@ export default function Home() {
           </div>
           <div className='p-5'>
           </div>
+        </div>
+      </footer>
+
+      <footer className="block lg:hidden text-[#1c1b19] border-none">
+
+
+        <div className='flex justify-center items-center border-none p-5 bg-[#f9f9f9]'>
+          <ul className='text-[40px] inline-flex gap-5'>
+            <li><a href="https://www.facebook.com/mano.andriasat"><FaSquareFacebook /></a></li>
+            <li><a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"> <FaLinkedin /></a></li>
+            <li><a href="https://github.com/ManoAndriasat"><FaSquareGithub /></a></li>
+          </ul>
         </div>
       </footer>
     </>
