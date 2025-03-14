@@ -175,7 +175,7 @@ export default function Home() {
     const skills = gsap.utils.toArray(".skill");
     const isMobile = window.innerWidth < 768;
     const spacer = isMobile ? 80 : 200;
-    const duration = isMobile ? 300 : 600;
+    const duration = isMobile ? 200 : 350;
 
     skills.forEach((skill, index) => {
       ScrollTrigger.create({
@@ -367,7 +367,7 @@ export default function Home() {
             <li><a href="https://www.facebook.com/mano.andriasat"><FaSquareFacebook /></a></li>
             <li><a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"> <FaLinkedin /></a></li>
             <li><a href="https://github.com/ManoAndriasat"><FaSquareGithub /></a></li>
-            <li><a href="mailto:ma.andriasat@gmail.com"><SiGmail/></a></li>
+            <li><a href="mailto:ma.andriasat@gmail.com"><SiGmail /></a></li>
           </ul>
         </div>
       </footer>
