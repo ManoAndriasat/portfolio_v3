@@ -175,7 +175,7 @@ export default function Home() {
     const skills = gsap.utils.toArray(".skill");
     const isMobile = window.innerWidth < 768;
     const spacer = isMobile ? 80 : 190;
-    const duration = isMobile ? 200 : 300;
+    const duration = isMobile ? 200 : 310;
 
     skills.forEach((skill, index) => {
       ScrollTrigger.create({
@@ -299,7 +299,7 @@ export default function Home() {
               className="skill h-content lg:h-[60vh] p-5 lg:px-10"
               style={{ backgroundColor: skill.bgColor }}
             >
-              <p className='skill-title text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase pb-7'>
+              <p className='skill-title text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase pb-5 lg:pb-7'>
                 {skill.title}
               </p>
               <p className="skill-description leading-none text-[18px] lg:text-[30px]">
