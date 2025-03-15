@@ -302,7 +302,7 @@ export default function Home() {
               <p className='skill-title text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase pb-7'>
                 {skill.title}
               </p>
-              <p className="skill-description leading-none text-[25px] lg:text-[40px]">
+              <p className="skill-description leading-none text-[18px] lg:text-[30px]">
                 {skill.description}
               </p>
               <div className="text-[18px] lg:text-[30px]">
