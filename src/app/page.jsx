@@ -174,7 +174,7 @@ export default function Home() {
     //Stacking skills
     const skills = gsap.utils.toArray(".skill");
     const isMobile = window.innerWidth < 768;
-    const spacer = isMobile ? 80 : 200;
+    const spacer = isMobile ? 80 : 190;
     const duration = isMobile ? 200 : 300;
 
     skills.forEach((skill, index) => {
@@ -264,7 +264,7 @@ export default function Home() {
             <div key={index} className={`work-details work-${index} flex items-center justify-between`}>
               <div>
                 <p className={`work-title work-title-${index} text-[25px] lg:text-[40px] py-[10px] lg:py-[30px]`}>{card.title}</p>
-                <div className={`work-content work-content-${index} text-[18px] lg:text-[30px] gap-5 p-5`}>
+                <div className={`work-content work-content-${index} text-[18px] lg:text-[40px] gap-5 p-5`}>
                   <p>{card.description}</p>
                   <ul>
                     <li>
