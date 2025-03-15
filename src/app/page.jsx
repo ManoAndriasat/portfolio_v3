@@ -250,7 +250,7 @@ export default function Home() {
               University Andoharanofotsy since 2021. I enjoy working on projects that help me learn more about coding, problem-solving,
               and design. I also like solving problems on LeetCode to improve my skills in algorithms and logic. Below are some of the projects I&apos;ve worked on.</p>
           </div>
-          <div className="marquee mt-10">
+          <div className="marquee mt-10 mb-5 lg:mb-0">
             <ModifMarquee />
           </div>
         </div>
