@@ -95,7 +95,7 @@ const Cards = [
       title: "UI/UX Developer",
       description:
         "I have a very particular interest in UI/UX development. I often use JavaScript frameworks and libraries like:",
-      languages: ["React", "Next", "Vue", "React Native", "GSAP", "Tailwind"],
+      languages: ["React", "Next", "Vue", "React Native", "GSAP", "Tailwind", "Webflow"],
       bgColor: "#be5b2a",
     },
     {
