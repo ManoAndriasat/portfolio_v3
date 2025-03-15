@@ -175,7 +175,7 @@ export default function Home() {
     const skills = gsap.utils.toArray(".skill");
     const isMobile = window.innerWidth < 768;
     const spacer = isMobile ? 80 : 200;
-    const duration = isMobile ? 250 : 350;
+    const duration = isMobile ? 200 : 300;
 
     skills.forEach((skill, index) => {
       ScrollTrigger.create({
