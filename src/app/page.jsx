@@ -263,7 +263,7 @@ export default function Home() {
           {Cards.map((card, index) => (
             <div key={index} className={`work-details work-${index} flex items-center justify-between`}>
               <div>
-                <p className={`work-title work-title-${index} text-[25px] lg:text-[40px] py-[10px] lg:py-[30px]`}>{card.title}</p>
+                <p className={`work-title work-title-${index} text-[25px] lg:text-[38px] py-[10px] lg:py-[30px]`}>{card.title}</p>
                 <div className={`work-content work-content-${index} text-[18px] gap-5 p-5`}>
                   <p>{card.description}</p>
                   <ul>
