@@ -7,6 +7,7 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -98,6 +99,13 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/logo.ico" />
         <link rel="shortcut icon" href="/logo.ico" />
         <link rel="icon" type="image/x-icon" href="/logo.ico" />
+        <link
+          rel="preload"
+          href="./style/agatho/Agatho_Light.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}

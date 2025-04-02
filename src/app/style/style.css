@@ -5,18 +5,11 @@ body, html{
 }
 
 @font-face {
-    font-family: 'agatho';
-    src: url('agatho/Agatho_\ Light.otf');
-}
-
-@font-face {
-    font-family: 'bamboy';
-    src: url('bamboy/BamboyTrial-Regular.otf');
-  }
-
-@font-face {
-    font-family: 'pincoyablack';
-    src: url('pincoyablack/pincoyablack.otf');
+  font-family: 'agatho';
+  src: url('/agatho/Agatho_Light.otf') format('opentype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .landing{
