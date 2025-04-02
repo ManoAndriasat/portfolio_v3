@@ -1,12 +1,13 @@
 'use client';
 import { useEffect, useState } from 'react';
+import '../style/style.css';
 
 export default function LoadingScreen({ onLoadingComplete }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const assetsToLoad = [
-      { name: 'font', weight: 20 },
+      { name: 'font', weight: 50 },
       { name: 'bg-image', weight: 30 },
       { name: 'lenis', weight: 20 },
       { name: 'other-assets', weight: 30 },
@@ -31,14 +32,14 @@ export default function LoadingScreen({ onLoadingComplete }) {
   }, [onLoadingComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center">
-      <div className="w-64 h-1 bg-gray-700 rounded-full mb-4 overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#7B0203] flex flex-col items-center justify-center">
+      {/* <div className="w-64 h-1 bg-gray-700 rounded-full mb-4 overflow-hidden">
         <div 
-          className="h-full bg-white transition-all duration-300 ease-out loading-bar" 
+          className="h-full bg-white transition-all duration-300 ease-out" 
           style={{ width: `${progress}%` }}
         />
-      </div>
-      <span className="text-white text-lg">{progress}%</span>
+      </div> */}
+      <span className="text-white loading-bar text-[3em]">{progress}</span>
     </div>
   );
 }
