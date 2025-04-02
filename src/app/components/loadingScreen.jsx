@@ -34,7 +34,7 @@ export default function LoadingScreen({ onLoadingComplete }) {
     <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center">
       <div className="w-64 h-1 bg-gray-700 rounded-full mb-4 overflow-hidden">
         <div 
-          className="h-full bg-white transition-all duration-300 ease-out" 
+          className="h-full bg-white transition-all duration-300 ease-out loading-bar" 
           style={{ width: `${progress}%` }}
         />
       </div>

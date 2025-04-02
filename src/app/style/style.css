@@ -20,6 +20,10 @@ body, html{
     background-size: cover;
 }
 
+.loading-bar{
+  font-family: 'agatho';
+}
+
 .foot{
     position: absolute;
     display: inline;
