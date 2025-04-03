@@ -8,16 +8,18 @@ export default function LoadingScreen({ onLoadingComplete }) {
   const loadingRef = useRef(null);
   const progressRef = useRef(null);
   const dotsRef = useRef(null);
+  const refreshCount = useRef(0);
 
   useEffect(() => {
-    // Initial GSAP setup
+    refreshCount.current = parseInt(localStorage.getItem('refreshCount') || '0');
+    localStorage.setItem('refreshCount', (refreshCount.current + 1).toString());
+
     gsap.from(loadingRef.current, {
       opacity: 0,
       duration: 0.8,
       ease: 'power2.out'
     });
 
-    // Animated dots
     gsap.to(dotsRef.current.children, {
       opacity: 0.3,
       y: -5,
@@ -30,20 +32,57 @@ export default function LoadingScreen({ onLoadingComplete }) {
 
     const loadAssets = async () => {
       try {
-        // Phase 1: 0-50% with variable timing
-        await animateProgress(0, 50, 1.5 + Math.random() * 1);
-        
-        const fontLoaded = await checkFontLoaded('agatho', '/agatho/Agatho_Light.otf');
-        
-        // Phase 2: 50-80% with variable timing
-        await animateProgress(50, 80, 1 + Math.random() * 1.5);
-        
-        const imageLoaded = await checkImageLoaded('/bg.png');
-        
-        // Final phase: 80-100% with variable timing
-        await animateProgress(80, 100, 0.8 + Math.random() * 0.7);
-        
-        // Complete animation
+        let minDuration;
+        if (refreshCount.current === 0) {
+          minDuration = 5000;
+        } else if (refreshCount.current === 1) {
+          minDuration = 2000;
+        } else {
+          minDuration = 1000;
+        }
+
+        const startTime = Date.now();
+        const fontPromise = checkFontLoaded('agatho', '/agatho/Agatho_Light.otf');
+        const imagePromise = checkImageLoaded('/bg.png');
+
+        while (true) {
+          const elapsed = Date.now() - startTime;
+          const [fontLoaded, imageLoaded] = await Promise.all([
+            Promise.race([fontPromise, Promise.resolve(false)]),
+            Promise.race([imagePromise, Promise.resolve(false)])
+          ]);
+
+          const assetsLoaded = fontLoaded && imageLoaded;
+          const progressRatio = Math.min(1, elapsed / minDuration);
+          
+          let currentProgress;
+          if (assetsLoaded) {
+            currentProgress = Math.min(100, progressRatio * 100);
+          } else {
+            currentProgress = Math.min(80, progressRatio * 80);
+          }
+
+          setProgress(Math.floor(currentProgress));
+          gsap.to(progressRef.current, {
+            width: `${currentProgress}%`,
+            duration: 0.3,
+            ease: 'sine.out'
+          });
+
+          if ((assetsLoaded && progressRatio >= 1) || (!assetsLoaded && elapsed >= minDuration * 1.5)) {
+            break;
+          }
+
+          await new Promise(resolve => requestAnimationFrame(resolve));
+        }
+
+        setProgress(100);
+        gsap.to(progressRef.current, {
+          width: '100%',
+          duration: 0.3,
+          ease: 'sine.out'
+        });
+
         gsap.to(loadingRef.current, {
           opacity: 0,
           duration: 0.5,
@@ -65,47 +104,13 @@ export default function LoadingScreen({ onLoadingComplete }) {
     loadAssets();
   }, [onLoadingComplete]);
 
-  const animateProgress = (start, end, duration) => {
-    return new Promise((resolve) => {
-      const startTime = Date.now();
-      const endTime = startTime + duration * 1000;
-      
-      const updateProgress = () => {
-        const now = Date.now();
-        const progressTime = Math.min(1, (now - startTime) / (duration * 1000));
-        const currentProgress = start + (end - start) * progressTime;
-        
-        setProgress(Math.floor(currentProgress));
-        
-        // Animate the progress bar with GSAP
-        gsap.to(progressRef.current, {
-          width: `${currentProgress}%`,
-          duration: 0.3,
-          ease: 'sine.out'
-        });
-        
-        if (now < endTime) {
-          requestAnimationFrame(updateProgress);
-        } else {
-          setProgress(end);
-          resolve();
-        }
-      };
-      
-      requestAnimationFrame(updateProgress);
-    });
-  };
-
   const checkFontLoaded = (fontName, fontUrl) => {
     return new Promise((resolve) => {
       const font = new FontFace(fontName, `url(${fontUrl})`);
-      
       font.load().then(() => {
         document.fonts.add(font);
         resolve(true);
-      }).catch(() => {
-        resolve(false);
-      });
+      }).catch(() => resolve(false));
     });
   };
 
@@ -113,7 +118,6 @@ export default function LoadingScreen({ onLoadingComplete }) {
     return new Promise((resolve) => {
       const img = new Image();
       img.src = imageUrl;
-      
       img.onload = () => resolve(true);
       img.onerror = () => resolve(false);
     });
