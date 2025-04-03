@@ -31,11 +31,9 @@ export default function Home() {
   const skillsRef = useRef(null);
   const workTitleRef = useRef(null);
 
-  const [isLoading, setIsLoading] = useState(true);
 
   // ARROW ANIMATION
   useEffect(() => {
-    if (!isLoading) {
       if (rightArrowRight.current) {
         gsap.to(rightArrowRight.current, {
           x: 10,
@@ -99,8 +97,7 @@ export default function Home() {
         requestAnimationFrame(raf);
         return () => lenis.destroy();
       });
-    }
-  }, [isLoading]);
+  }, []);
 
 
   useGSAP(() => {
@@ -215,8 +212,6 @@ export default function Home() {
 
   return (
     <>
-      {isLoading && <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />}
-      <div className={isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}>
         <SecondHeader landingRef={landingRef} aboutRef={aboutRef} workRef={workRef} skillsRef={skillsRef} contactRef={contactRef} />
         <section id='landing' ref={landingRef} className='landing text-[#f9f9f9] h-screen' >
           <FirstHeader landingRef={landingRef} aboutRef={aboutRef} workRef={workRef} skillsRef={skillsRef} contactRef={contactRef} />
@@ -370,7 +365,6 @@ export default function Home() {
             </ul>
           </div>
         </footer>
-      </div>
     </>
   );
 }

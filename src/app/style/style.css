@@ -4,12 +4,6 @@ body, html{
     background-color: #1c1b19;
 }
 
-@font-face {
-    font-family: 'agatho';
-    src: url('agatho/Agatho_\ Light.otf');
-}
-
-
 .landing{
     background-image: url('/bg.png');
     background-size: cover;
@@ -18,10 +12,6 @@ body, html{
 .main{
     background-image: url('/bg-2.png');
     background-size: cover;
-}
-
-.loading-bar{
-  font-family: 'agatho';
 }
 
 .foot{
@@ -39,7 +29,7 @@ body, html{
 }
 
 .simple-word{
-    font-family: 'agatho';
+    font-family: var(--font-agatho);
     color: #f9f9f9;
     padding-top: 20px;
     display: flex;
@@ -121,7 +111,7 @@ body, html{
   }
 
 .annonce{
-  font-family: 'agatho';
+  font-family: var(--font-agatho);
 
 }
 
@@ -137,10 +127,10 @@ body, html{
   font-family: 'poppins';
 }
 .profesionnal-work .title{
-  font-family: 'agatho';
+  font-family: var(--font-agatho);
 }
 .about-details{
-  font-family: 'agatho';
+  font-family: var(--font-agatho);
 }
 
 
@@ -254,7 +244,7 @@ body, html{
   border: 1px solid white
 }
 .work-title{
-  font-family: 'agatho';
+  font-family: var(--font-agatho);
   color: #f9f9f9;
   padding-left: 20px;
   padding-top: 10px;
@@ -286,11 +276,11 @@ body, html{
 }
 
 .skill-description{
-  font-family: 'agatho';
+  font-family: var(--font-agatho);
 }
 
 .skill h1{
-  font-family: 'agatho';
+  font-family: var(--font-agatho);
   width: 80%;
 }
 

@@ -6,39 +6,52 @@ export default function LoadingScreen({ onLoadingComplete }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const assetsToLoad = [
-      { name: 'font', weight: 50 },
-      { name: 'bg-image', weight: 30 },
-      { name: 'lenis', weight: 20 },
-      { name: 'other-assets', weight: 30 },
-    ];
-
-    let loaded = 0;
-    const totalWeight = assetsToLoad.reduce((sum, asset) => sum + asset.weight, 0);
-
-    const loadAsset = (asset) => {
-      setTimeout(() => {
-        loaded += asset.weight;
-        const newProgress = Math.min(Math.round((loaded / totalWeight) * 100), 100);
-        setProgress(newProgress);
-
-        if (newProgress === 100) {
-          setTimeout(onLoadingComplete, 500)
-        }
-      }, Math.random() * 500 + 100);
+    const loadAssets = async () => {
+      try {
+        const fontLoaded = await checkFontLoaded('agatho', '/agatho/Agatho_Light.otf');
+        setProgress(50);
+        
+        const imageLoaded = await checkImageLoaded('/bg.png');
+        setProgress(80);
+        
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setProgress(100);
+        
+        setTimeout(onLoadingComplete, 300);
+      } catch (error) {
+        console.error('Loading error:', error);
+        setTimeout(onLoadingComplete, 500);
+      }
     };
 
-    assetsToLoad.forEach(loadAsset);
+    loadAssets();
   }, [onLoadingComplete]);
+
+  const checkFontLoaded = (fontName, fontUrl) => {
+    return new Promise((resolve) => {
+      const font = new FontFace(fontName, `url(${fontUrl})`);
+      
+      font.load().then(() => {
+        document.fonts.add(font);
+        resolve(true);
+      }).catch(() => {
+        resolve(false);
+      });
+    });
+  };
+
+  const checkImageLoaded = (imageUrl) => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.src = imageUrl;
+      
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+    });
+  };
 
   return (
     <div className="fixed inset-0 z-50 bg-[#7B0203] flex flex-col items-center justify-center">
-      {/* <div className="w-64 h-1 bg-gray-700 rounded-full mb-4 overflow-hidden">
-        <div 
-          className="h-full bg-white transition-all duration-300 ease-out" 
-          style={{ width: `${progress}%` }}
-        />
-      </div> */}
       <span className="text-white loading-bar text-[3em]">{progress}</span>
     </div>
   );

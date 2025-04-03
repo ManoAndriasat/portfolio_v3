@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
+import { agatho } from './fonts';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,6 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata = {
   title: "Mano Andriasat",
   description: "Mano Andriasat - Creative Developer",
@@ -20,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+<head>
         <meta charSet="UTF-8" />
         <meta name="keywords" content="Andriasatarintsoa Manohisoa Alain, Mano Andriasat, Mano Andriasatarintsoa, Manohisoa Alain Andriasatarintsoa, Manohisoa Alain Andriasat, Mano Andriasatarintsoa, Mano Andriasat, Mano Andriasatarintsoa, Manohisoa Alain" />
         <meta name="author" content="Mano Andriasat - Creative Developer" />
@@ -100,7 +102,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/x-icon" href="/logo.ico" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${agatho.variable} antialiased overflow-x-hidden`}
       >
         <Suspense fallback={null}>
           {children}
