@@ -1,5 +1,3 @@
-import { link } from "fs";
-
 const Cards = [
     {
       title: "Garage management system",
