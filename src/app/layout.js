@@ -22,14 +22,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-<head>
+      <head>
         <meta charSet="UTF-8" />
         <meta name="keywords" content="Andriasatarintsoa Manohisoa Alain, Mano Andriasat, Mano Andriasatarintsoa, Manohisoa Alain Andriasatarintsoa, Manohisoa Alain Andriasat, Mano Andriasatarintsoa, Mano Andriasat, Mano Andriasatarintsoa, Manohisoa Alain" />
         <meta name="author" content="Mano Andriasat - Creative Developer" />
         <meta name="robots" content="index, follow" />
+        <meta name="description" content="I'm Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I've been studying application development at IT University Andoharanofotsy since 2021. I enjoy working on projects that help me learn more about coding, problem-solving, and design." />
+        <meta property="og:title" content="Mano Andriasat - Developer Portfolio" />
+        <meta property="og:description" content="I'm Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I've been studying application development at IT University Andoharanofotsy since 2021." />
+        <meta property="og:type" content="website" />
 
-        <meta property="og:title" content="Mano Andriasat - Creative Developer" />
-        <meta property="og:description" content="Innover votre présentation pour mieux vous démarquer." />
         <meta property="og:image" content="./logo.ico" />
         <meta property="og:url" content="https://mano-andriasat.me" />
 
