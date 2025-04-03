@@ -51,7 +51,7 @@ export default function LoadingScreen({ onLoadingComplete }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#7B0203] flex flex-col items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center">
       <span className="text-white loading-bar text-[3em]">{progress}</span>
     </div>
   );

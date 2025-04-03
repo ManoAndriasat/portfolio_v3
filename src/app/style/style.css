@@ -14,6 +14,10 @@ body, html{
     background-size: cover;
 }
 
+.loading-bar{
+  font-weight: lighter;
+}
+
 .foot{
     position: absolute;
     display: inline;
