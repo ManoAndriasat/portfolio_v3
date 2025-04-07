@@ -303,7 +303,7 @@ export default function Home() {
                   {skill.name}
                 </p>
                 <p className="skill-description leading-none text-[18px] lg:text-[30px]">
-                  {skill.description}
+                  {skill.details}
                 </p>
                 <div className="text-[18px] lg:text-[30px]">
                   <ul className='language inline-flex gap-5 py-10 flex-wrap'>
