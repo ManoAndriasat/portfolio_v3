@@ -234,7 +234,7 @@ export default function Home() {
           </div>
 
           <div className="foot grid grid-cols-12">
-            <span className='pl-0 lg:pl-2 word col-span-8 lg:col-span-10 pr-2 description' metadata-text="A developer who builds with design in mind.">
+            <span className='pl-0 lg:pl-2 word col-span-8 lg:col-span-10 pr-2 description' metadata-text="A developer who builds with design in mind." name="description">
               A developer who builds with design in mind.</span>
             <span className="year col-span-4 lg:col-span-2 pl-2">Mano Andriasat</span>
           </div>
@@ -245,7 +245,7 @@ export default function Home() {
             <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
             <div className="about-details px-[5%] text-[#1c1b19]">
               <h1 ref={aboutTitleRef} className='text-[4em] lg:text-[6em] text-weight-[bold]'>About.</h1>
-              <p ref={textRef} className='description about-reveal text-[2.1em] lg:text-[4em] leading-none'>
+              <p ref={textRef} className='description about-reveal text-[2.1em] lg:text-[4em] leading-none' name="description">
                 I&apos;m Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I&apos;ve been studying application development at IT
                 University Andoharanofotsy since 2021. I enjoy working on projects that help me learn more about coding, problem-solving,
                 and design. I also like solving problems on LeetCode to improve my skills in algorithms and logic. Below are some of the projects I&apos;ve worked on.</p>
