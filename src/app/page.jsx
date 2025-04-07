@@ -221,7 +221,7 @@ export default function Home() {
         <section id='landing' ref={landingRef} className='landing text-[#f9f9f9] h-screen' >
           <FirstHeader landingRef={landingRef} aboutRef={aboutRef} workRef={workRef} skillsRef={skillsRef} contactRef={contactRef} />
           <div className="simple-word lg:pl-[35%] lg:pr-[15%] mt-[15%] lg:mt-0 mx-5 lg:mx-0">
-            <p className="leading-none text-[3em] lg:text-[6em]">
+            <p className="leading-none text-[3em] md:text-[5em] lg:text-[6em] ">
               {`THINGS THAT YOU ARE NOT PROUD OF SHOULDN'T BE SIGNED BY YOUR NAME.`
                 .split(" ")
                 .map((word, index) => (
@@ -230,10 +230,10 @@ export default function Home() {
                   </span>
                 ))}
             </p>
-            <p ref={miniBannerRef} className='font-sans mini-banner'>Show your worth through your work.</p>
+            <p ref={miniBannerRef} className='font-sans mini-banner text-[12px] lg:text-[14px]'>Show your worth through your work.</p>
           </div>
 
-          <div className="foot grid grid-cols-12">
+          <div className="foot grid grid-cols-12 text-[12px] lg:text-[14px]">
             <span className='pl-0 lg:pl-2 word col-span-8 lg:col-span-10 pr-2 description' metadata-text="A developer who builds with design in mind." name="description">
               A developer who builds with design in mind.</span>
             <span className="year col-span-4 lg:col-span-2 pl-2">Mano Andriasat</span>
