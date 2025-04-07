@@ -190,7 +190,7 @@ export default function Home() {
     //Work details extension
     document.querySelectorAll(".work-details").forEach((work, index) => {
       const workContent = work.querySelector(".work-content");
-      const workTitle = work.querySelector(`.work-title-${index}`);
+      const workTitle = work.querySelector(`.work-name-${index}`);
       const workLink = work.querySelector(`.work-link`);
       const contentHeight = workContent?.offsetHeight || 0;
 
@@ -234,7 +234,8 @@ export default function Home() {
           </div>
 
           <div className="foot grid grid-cols-12">
-            <span className='pl-0 lg:pl-2 word col-span-8 lg:col-span-10 pr-2'>A developer who builds with design in mind.</span>
+            <span className='pl-0 lg:pl-2 word col-span-8 lg:col-span-10 pr-2 description' metadata-text="A developer who builds with design in mind.">
+              A developer who builds with design in mind.</span>
             <span className="year col-span-4 lg:col-span-2 pl-2">Mano Andriasat</span>
           </div>
         </section>
@@ -244,7 +245,7 @@ export default function Home() {
             <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
             <div className="about-details px-[5%] text-[#1c1b19]">
               <h1 ref={aboutTitleRef} className='text-[4em] lg:text-[6em] text-weight-[bold]'>About.</h1>
-              <p ref={textRef} className='about-reveal text-[2.1em] lg:text-[4em] leading-none'>
+              <p ref={textRef} className='description about-reveal text-[2.1em] lg:text-[4em] leading-none'>
                 I&apos;m Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I&apos;ve been studying application development at IT
                 University Andoharanofotsy since 2021. I enjoy working on projects that help me learn more about coding, problem-solving,
                 and design. I also like solving problems on LeetCode to improve my skills in algorithms and logic. Below are some of the projects I&apos;ve worked on.</p>
@@ -262,9 +263,9 @@ export default function Home() {
             {Cards.map((card, index) => (
               <div key={index} className={`work-details work-${index} flex items-center justify-between`}>
                 <div>
-                  <p className={`work-title work-title-${index} text-[25px] lg:text-[38px] py-[10px] lg:py-[30px]`}>{card.title}</p>
+                  <p className={`work-name work-name-${index} text-[25px] lg:text-[38px] py-[10px] lg:py-[30px]`}>{card.name}</p>
                   <div className={`work-content work-content-${index} text-[18px] lg:text-[25px] gap-5 p-5`}>
-                    <p>{card.description}</p>
+                    <p>{card.details}</p>
                     <ul>
                       <li>
                         <strong>Participants:</strong> {card.participants}
@@ -298,8 +299,8 @@ export default function Home() {
                 className="skill h-content lg:h-[60vh] p-5 lg:px-10"
                 style={{ backgroundColor: skill.bgColor }}
               >
-                <p className='skill-title text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase pb-5 lg:pb-7'>
-                  {skill.title}
+                <p className='text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase pb-5 lg:pb-7'>
+                  {skill.name}
                 </p>
                 <p className="skill-description leading-none text-[18px] lg:text-[30px]">
                   {skill.description}

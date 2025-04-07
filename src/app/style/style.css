@@ -247,7 +247,7 @@ body, html{
 .work-details{
   border: 1px solid white
 }
-.work-title{
+.work-name{
   font-family: var(--font-agatho);
   color: #f9f9f9;
   padding-left: 20px;

@@ -16,7 +16,36 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Mano Andriasat",
-  description: "Mano Andriasat - Creative Developer",
+  description: "I'm Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I've been studying application development at IT University Andoharanofotsy since 2021.",
+  keywords: "Andriasatarintsoa Manohisoa Alain, Mano Andriasat, Mano Andriasatarintsoa, Manohisoa Alain Andriasatarintsoa, Manohisoa Alain Andriasat",
+  authors: [{ name: 'Mano Andriasat', url: 'https://mano-andriasat.me' }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Mano Andriasat - Developer Portfolio",
+    description: "I'm Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I've been studying application development at IT University Andoharanofotsy since 2021.",
+    url: "https://mano-andriasat.me",
+    siteName: "Mano Andriasat",
+    images: [
+      {
+        url: "/logo.ico",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mano Andriasat",
+    description: "Découvrez nos services innovants.",
+    images: ["/logo.ico"],
+  },
+  icons: {
+    icon: "/logo.ico",
+    shortcut: "/logo.ico",
+    apple: "/logo.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
