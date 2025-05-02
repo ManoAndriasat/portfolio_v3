@@ -11,19 +11,19 @@ const Cards = [
     {
       name : "Datamart Design and Dashboard Development",
       details : "Design of a datamart (a specialized data storage system). Automatic data extraction from a data warehouse (DHIS2) to our datamart via an ETL process. Development of an online dashboard and data analysis tools for a government program (PARN).",
-      participants: "Internship",
-      techno: "Django Rest - React - DHIS2 - SQL - scikit-learn",
+      participants: "Solo project",
+      techno: "Django Rest Framework - React - DHIS2 - PostgreSQL - scikit_learn",
       society: "Project Coordination Unit",
-      link: "Link to project (if available)",
+      link: "none",
       date: "JUN - OCT 2024"
     },
     {
       name : "Dynamic Room Reservation Calendar",
       details : "Development of a room reservation management application, allowing users to manage absences and book vehicles for missions, optimizing resource organization.",
-      participants: "Solo project",
+      participants: "Group of 2 (50% contribution)",
       techno: "Django Rest - React",
-      society: "School",
-      link: "N/A"
+      society: "Project Coordination Unit",
+      link: "none"
     },
     {
       name : "Internal Supply Chain System",
@@ -104,13 +104,13 @@ const Cards = [
       name : "UI/UX Developer",
       details :
         "I have a very particular interest in UI/UX development. I often use JavaScript frameworks and libraries like:",
-      languages: ["React", "Next", "Vue", "React Native", "GSAP", "Tailwind", "Webflow"],
+      languages: ["React", "React Native", "Next", "Angular", "GSAP", "Tailwind", "Webflow"],
       bgColor: "#be5b2a",
     },
     {
       name : "BackEnd",
       details : "Skilled in server-side development and database management.",
-      languages: ["Spring Boot", "ASP.net", "Express Js", "PostgreSQL", "Oracle", "MySql"],
+      languages: ["Spring Boot", "ASP.net", "Express Js", "PostgreSQL", "Oracle", "MySql", "MongoDB"],
       bgColor: "#b6a897",
     },
     {

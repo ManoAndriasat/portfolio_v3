@@ -212,7 +212,6 @@ export default function Home() {
   }, []);
 
 
-
   return (
     <>
       {isLoading && <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />}
