@@ -18,12 +18,12 @@ export const metadata = {
   title: "Mano Andriasat",
   description: "I'm Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I've been studying application development at IT University Andoharanofotsy since 2021.",
   keywords: "Andriasatarintsoa Manohisoa Alain, Mano Andriasat, Mano Andriasatarintsoa, Manohisoa Alain Andriasatarintsoa, Manohisoa Alain Andriasat",
-  authors: [{ name: 'Mano Andriasat', url: 'https://mano-andriasat.me' }],
+  authors: [{ name: 'Mano Andriasat', url: 'https://manohisoa.site' }],
   robots: "index, follow",
   openGraph: {
     title: "Mano Andriasat - Developer Portfolio",
     description: "I'm Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I've been studying application development at IT University Andoharanofotsy since 2021.",
-    url: "https://mano-andriasat.me",
+    url: "https://manohisoa.site",
     siteName: "Mano Andriasat",
     images: [
       {
@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
         <meta property="og:type" content="website" />
 
         <meta property="og:image" content="./logo.ico" />
-        <meta property="og:url" content="https://mano-andriasat.me" />
+        <meta property="og:url" content="https://manohisoa.site" />
 
         <meta name="twitter:card" content="./logo.ico" />
         <meta name="twitter:title" content="Mano Andriasat" />
@@ -75,57 +75,57 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "url": "https://mano-andriasat.me",
+              "url": "https://manohisoa.site",
               "name": "Mano Andriasat",
               "description": "Innover votre présentation pour mieux vous démarquer.",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://mano-andriasat.me/?s={search_term_string}",
+                "target": "https://manohisoa.site/?s={search_term_string}",
                 "query-input": "required name=search_term_string"
               },
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://mano-andriasat.me"
+                "@id": "https://manohisoa.site"
               },
               "hasPart": [
                 {
                   "@type": "SiteNavigationElement",
                   "name": "Home",
-                  "url": "https://mano-andriasat.me/#landing"
+                  "url": "https://manohisoa.site/#landing"
                 },
                 {
                   "@type": "SiteNavigationElement",
                   "name": "About",
-                  "url": "https://mano-andriasat.me/#about"
+                  "url": "https://manohisoa.site/#about"
                 },
                 {
                   "@type": "SiteNavigationElement",
                   "name": "Work",
-                  "url": "https://mano-andriasat.me/#work"
+                  "url": "https://manohisoa.site/#work"
                 },
                 {
                   "@type": "SiteNavigationElement",
                   "name": "Skills",
-                  "url": "https://mano-andriasat.me/#skills"
+                  "url": "https://manohisoa.site/#skills"
                 },
                 {
                   "@type": "SiteNavigationElement",
                   "name": "Contact",
-                  "url": "https://mano-andriasat.me/#contact"
+                  "url": "https://manohisoa.site/#contact"
                 }
               ]
             })
           }}
         />
 
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6986612538172876"
-     crossorigin="anonymous"></script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-76MZXLNDG4"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6986612538172876"
+          crossorigin="anonymous"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7940EXH3T0"></script>
         <script id="google-analytics" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-76MZXLNDG4');`}
+            gtag('config', 'G-7940EXH3T0');`}
         </script>
 
         <link rel="icon" href="/logo.ico" />
