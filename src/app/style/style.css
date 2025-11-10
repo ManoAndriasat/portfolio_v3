@@ -1,139 +1,153 @@
-body, html{
-    padding: 0;
-    margin: 0;
-    background-color: #1c1b19;
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background-color: #1c1b19;
 }
 
-.landing{
-    background-image: url('/bg.png');
-    background-size: cover;
+.landing {
+  background-image: url('/bg.png');
+  background-size: cover;
 }
 
-.main{
-    background-image: url('/bg-2.png');
-    background-size: cover;
+.main {
+  background-image: url('/bg-2.png');
+  background-size: cover;
 }
 
-.loading-bar{
+.loading-bar {
   font-weight: lighter;
 }
 
-.foot{
-    position: absolute;
-    display: inline;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    border: 1px solid #f9f9f9;
-    padding: 2px;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-bottom: 30px;
+.foot {
+  position: absolute;
+  display: inline;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  border: 1px solid #f9f9f9;
+  padding: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 30px;
 }
 
-.simple-word{
-    font-family: var(--font-agatho);
-    color: #f9f9f9;
-    padding-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
+.simple-word {
+  font-family: var(--font-agatho);
+  color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  padding-top: 30px;
+}
+
+@media (min-width: 1024px) {
+  .simple-word {
+    padding-top: 0;
+  }
 }
 
 
-.foot .year{
-    border-left: 1px solid #f9f9f9;
+.foot .year {
+  border-left: 1px solid #f9f9f9;
 }
 
-.header{
+.header {
   text-transform: uppercase;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+  position: relative;
+  display: inline-block;
+}
 
-  /* Button styling */
-  .dropdown-button {
-    background-color: #5dd63f;
-    color: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-    font-size: 35px;
-    width: 95px;
-    height: 95px;
-    border: 1px solid #262626;
-    border-left: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+/* Button styling */
+.dropdown-button {
+  background-color: #5dd63f;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 35px;
+  width: 95px;
+  height: 95px;
+  border: 1px solid #262626;
+  border-left: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  /* Dropdown menu */
-  .dropdown-menu {
-    position: absolute;
-    top: 100%; /* Position the menu below the button */
-    left: 0;
-    background-color: #f9f9f9;
-    border-right: 1px solid #262626;
-    width: 95px;
-    z-index: 1;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    overflow: hidden; /* Ensure the dropdown doesn't overflow */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    font-size: 14px;
-  }
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  /* Position the menu below the button */
+  left: 0;
+  background-color: #f9f9f9;
+  border-right: 1px solid #262626;
+  width: 95px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  /* Ensure the dropdown doesn't overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 14px;
+}
 
-  /* Dropdown menu list */
-  .dropdown-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+/* Dropdown menu list */
+.dropdown-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .dropdown-menu li {
-    padding: 15px;
-    color: #000000;
-    cursor: pointer;
-    width: 100%; /* Ensure each option takes full width */
-    text-align: center; /* Center the text inside each option */
-    transition: background-color 0.3s ease;
-    border-bottom: 1px solid #55555581;
-  }
+.dropdown-menu li {
+  padding: 15px;
+  color: #000000;
+  cursor: pointer;
+  width: 100%;
+  /* Ensure each option takes full width */
+  text-align: center;
+  /* Center the text inside each option */
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #55555581;
+}
 
-  .dropdown:hover .dropdown-menu {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-.annonce{
+.annonce {
   font-family: var(--font-agatho);
 
 }
 
-.image-1{
+.image-1 {
   width: 0%;
 }
 
 
-.profesionnal-work{
+.profesionnal-work {
   background-image: url('/bg-2.png');
 }
-.profesionnal-work .description{
+
+.profesionnal-work .description {
   font-family: 'poppins';
 }
-.profesionnal-work .title{
+
+.profesionnal-work .title {
   font-family: var(--font-agatho);
 }
-.about-details{
+
+.about-details {
   font-family: var(--font-agatho);
 }
 
@@ -167,16 +181,19 @@ body, html{
 /* Dropdown menu */
 .second-dropdown-menu {
   position: absolute;
-  top: 0; /* Position the menu to the right of the button */
+  top: 0;
+  /* Position the menu to the right of the button */
   left: 100%;
   background-color: #f9f9f9;
   border-right: 1px solid #262626;
-  width: auto; /* Adjust width based on content */
+  width: auto;
+  /* Adjust width based on content */
   z-index: 1;
   opacity: 0;
   transform: translateX(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  overflow: hidden; /* Ensure the dropdown doesn't overflow */
+  overflow: hidden;
+  /* Ensure the dropdown doesn't overflow */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,7 +206,8 @@ body, html{
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Display list items horizontally */
+  display: flex;
+  /* Display list items horizontally */
 }
 
 .second-dropdown-menu li {
@@ -197,7 +215,8 @@ body, html{
   padding: 15px;
   color: #000000;
   cursor: pointer;
-  text-align: center; /* Center the text inside each option */
+  text-align: center;
+  /* Center the text inside each option */
   transition: background-color 0.3s ease;
   border: 1px solid #262626;
   border-left: none;
@@ -207,7 +226,8 @@ body, html{
 }
 
 .second-dropdown-menu li:last-child {
-  border-right: none; /* Remove border from the last item */
+  border-right: none;
+  /* Remove border from the last item */
 }
 
 /* Hover effect for dropdown */
@@ -215,7 +235,8 @@ body, html{
   opacity: 1;
   transform: translateX(0);
 }
-.second-logo{
+
+.second-logo {
   border: 1px solid #1c1b19;
 }
 
@@ -238,22 +259,26 @@ body, html{
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover; /* Make the image bigger and cover the entire area */
+  background-size: cover;
+  /* Make the image bigger and cover the entire area */
   filter: blur(8px);
   -webkit-filter: blur(8px);
-  z-index: -1; /* Ensure it stays behind the content */
+  z-index: -1;
+  /* Ensure it stays behind the content */
 }
 
-.work-details{
+.work-details {
   border: 1px solid white
 }
-.work-name{
+
+.work-name {
   font-family: var(--font-agatho);
   color: #f9f9f9;
   padding-left: 20px;
   padding-top: 10px;
   text-transform: uppercase;
 }
+
 .work-content {
   display: none;
   opacity: 0;
@@ -261,35 +286,36 @@ body, html{
   font-weight: lighter;
 }
 
-.contact-information{
+.contact-information {
   border: transparent;
 }
 
-.contact-information div{
+.contact-information div {
   border: transparent;
 }
 
-.contact-information div div{
+.contact-information div div {
   border: transparent;
 }
 
 .skill {
   position: relative;
-  background-image: url('https://www.transparenttextures.com/patterns/noise.png'); /* Noise texture */
+  background-image: url('https://www.transparenttextures.com/patterns/noise.png');
+  /* Noise texture */
   background-size: cover;
 }
 
-.skill-description{
+.skill-description {
   font-family: var(--font-agatho);
 }
 
-.skill h1{
+.skill h1 {
   font-family: var(--font-agatho);
   width: 80%;
 }
 
-.language li{
-  border:  1px solid #1c1b19;
+.language li {
+  border: 1px solid #1c1b19;
   border-radius: 3px;
   padding: 5px 10px;
 }

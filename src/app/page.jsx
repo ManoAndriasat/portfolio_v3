@@ -219,8 +219,8 @@ export default function Home() {
         <SecondHeader landingRef={landingRef} aboutRef={aboutRef} workRef={workRef} skillsRef={skillsRef} contactRef={contactRef} />
         <section id='landing' ref={landingRef} className='landing text-[#f9f9f9] h-screen' >
           <FirstHeader landingRef={landingRef} aboutRef={aboutRef} workRef={workRef} skillsRef={skillsRef} contactRef={contactRef} />
-          <div className="simple-word lg:pl-[35%] lg:pr-[15%] mt-[15%] lg:mt-0 mx-5 lg:mx-0">
-            <p className="leading-none text-[3em] md:text-[5em] lg:text-[6em] ">
+          <div className="simple-word lg:pl-[35%] lg:pr-[15%] lg:mt-0 mx-5 lg:mx-0">
+            <p className="leading-none text-[5vw]">
               {`THINGS THAT YOU ARE NOT PROUD OF SHOULDN'T BE SIGNED BY YOUR NAME.`
                 .split(" ")
                 .map((word, index) => (
@@ -262,7 +262,7 @@ export default function Home() {
             {Cards.map((card, index) => (
               <div key={index} className={`work-details work-${index} flex items-center justify-between`}>
                 <div>
-                  <p className={`work-name work-name-${index} text-[25px] lg:text-[38px] py-[10px] lg:py-[30px]`}>{card.name}</p>
+                  <p className={`work-name work-name-${index} text-[25px] lg:text-[38px] pt-[10px] lg:py-[30px]`}>{card.name}</p>
                   <div className={`work-content work-content-${index} text-[18px] lg:text-[25px] gap-5 p-5`}>
                     <p>{card.details}</p>
                     <ul>
