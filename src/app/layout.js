@@ -120,12 +120,12 @@ export default function RootLayout({ children }) {
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6986612538172876"
           crossorigin="anonymous"></script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7940EXH3T0"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-76MZXLNDG4"></script>
         <script id="google-analytics" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-7940EXH3T0');`}
+            gtag('config', 'G-76MZXLNDG4');`}
         </script>
 
         <link rel="icon" href="/logo.ico" />
