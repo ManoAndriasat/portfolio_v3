@@ -38,7 +38,7 @@ export default function FirstHeader({ landingRef, aboutRef, workRef, skillsRef, 
                     <Image src="/logo.png" width={70} height={70} alt='logo' />
                 </span>
                 <span className='flex items-center gap-2 mr-[5%]'>
-                    scroll down <span className='bg-[#f9f9f9] rounded-[50%] text-[#1c1b19] p-3 text-xl'><  FaArrowDown ref={arrowRef} /></span>
+                    scroll down <span className='bg-[#f9f9f9] rounded-[50%] text-[#1c1b19] p-3 text-[14px]'><  FaArrowDown ref={arrowRef} /></span>
                 </span>
             </div>
 
