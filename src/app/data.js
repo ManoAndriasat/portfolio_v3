@@ -25,7 +25,7 @@ const Cards = [
   },
   {
     name: "Garage management system",
-    details: "Development of a garage management system, including vehicle registration, asking appointments, following up on repairs, and managing customer information. (we use free server to host the backend, so it may take time run out of free quota)",
+    details: "Development of a garage management system, including vehicle registration, asking appointments, following up on repairs, and managing customer information. (We use a free server to host the backend, so the free quota may run out.)",
     participants: "Group of 2 (70% contribution)",
     techno: "Stack MEAN (MongoDB, Express.js, Angular, Node.js)",
     society: "Freelance",
@@ -75,7 +75,7 @@ const Cards = [
   },
   {
     name: "Used Car Sales Website",
-    details: "Website dedicated to selling used cars with advanced filters to simplify the search process.",
+    details: "Website dedicated to selling used cars with advanced filters to simplify the search process. (We use a free server to host the backend, so the free quota may run out.)",
     participants: "Group of 4 (95% contribution to frontend)",
     techno: "React",
     society: "School",
@@ -133,17 +133,17 @@ const Cards = [
 
 const skillsData = [
   {
-    name: "UI/UX Developer",
-    details:
-      "I have a very particular interest in UI/UX development. I often use JavaScript frameworks and libraries like:",
-    languages: ["React", "React Native", "Next", "Angular", "GSAP", "Tailwind", "Webflow"],
-    bgColor: "#be5b2a",
+    name: "Server Side",
+    details: "Skilled in server-side development and database management.",
+    languages: ["Java", ".NET", "Python", "PostgreSQL", "Oracle", "MongoDB"],
+    bgColor: "#b6a897",
   },
   {
-    name: "BackEnd",
-    details: "Skilled in server-side development and database management.",
-    languages: ["Spring Boot", "ASP.net", "Express Js", "PostgreSQL", "Oracle", "MySql", "MongoDB"],
-    bgColor: "#b6a897",
+    name: "UI/UX Developpment",
+    details:
+      "I have a very particular interest in UI/UX development. I often use JavaScript frameworks and libraries like:",
+    languages: ["React", "React Native", "Next", "Angular", "GSAP", "Tailwind"],
+    bgColor: "#be5b2a",
   },
   {
     name: "Designer",

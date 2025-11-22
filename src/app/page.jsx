@@ -245,7 +245,7 @@ export default function Home() {
             <div className="about-details px-[5%] text-[#1c1b19]">
               <h1 ref={aboutTitleRef} className='text-[55px] lg:text-[6em] text-weight-[bold]'>About.</h1>
               <p ref={textRef} className='description about-reveal text-[34px] lg:text-[4em] leading-none' name="description">
-                I&apos;m Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I&apos;ve been studying application development at IT
+                I&apos;m Andriasatarintsoa Manohisoa, 22 years old, living in Antananarivo, Madagascar. I&apos;ve been studying application development at IT
                 University Andoharanofotsy since 2021. I enjoy working on projects that help me learn more about coding, problem-solving,
                 and design. I also like solving problems on LeetCode to improve my skills in algorithms and logic. Below are some of the projects I&apos;ve worked on.</p>
             </div>
