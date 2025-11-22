@@ -11,6 +11,10 @@ export default function LoadingScreen({ onLoadingComplete }) {
   const refreshCount = useRef(0);
 
   useEffect(() => {
+    // Désactiver le défilement
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
     refreshCount.current = parseInt(localStorage.getItem('refreshCount') || '0');
     localStorage.setItem('refreshCount', (refreshCount.current + 1).toString());
 
@@ -34,7 +38,7 @@ export default function LoadingScreen({ onLoadingComplete }) {
       try {
         let minDuration;
         if (refreshCount.current === 0) {
-          minDuration = 5000;
+          minDuration = 4000;
         } else if (refreshCount.current === 1) {
           minDuration = 2000;
         } else {
@@ -54,7 +58,7 @@ export default function LoadingScreen({ onLoadingComplete }) {
 
           const assetsLoaded = fontLoaded && imageLoaded;
           const progressRatio = Math.min(1, elapsed / minDuration);
-          
+
           let currentProgress;
           if (assetsLoaded) {
             currentProgress = Math.min(100, progressRatio * 100);
@@ -88,6 +92,9 @@ export default function LoadingScreen({ onLoadingComplete }) {
           duration: 0.5,
           ease: 'power2.in',
           onComplete: () => {
+            // Réactiver le défilement après l'animation de disparition
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
             setTimeout(onLoadingComplete, 300);
           }
         });
@@ -96,12 +103,23 @@ export default function LoadingScreen({ onLoadingComplete }) {
         gsap.to(loadingRef.current, {
           opacity: 0,
           duration: 0.5,
-          onComplete: () => setTimeout(onLoadingComplete, 300)
+          onComplete: () => {
+            // Réactiver le défilement en cas d'erreur aussi
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+            setTimeout(onLoadingComplete, 300);
+          }
         });
       }
     };
 
     loadAssets();
+
+    // Cleanup function en cas de démontage du composant
+    return () => {
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+    };
   }, [onLoadingComplete]);
 
   const checkFontLoaded = (fontName, fontUrl) => {
@@ -124,7 +142,7 @@ export default function LoadingScreen({ onLoadingComplete }) {
   };
 
   return (
-    <div 
+    <div
       ref={loadingRef}
       className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center"
       style={{
@@ -133,21 +151,21 @@ export default function LoadingScreen({ onLoadingComplete }) {
     >
       <div className="relative w-full max-w-[400px] px-8">
         <div className="h-[2px] bg-gray-700 w-full mb-4 overflow-hidden">
-          <div 
+          <div
             ref={progressRef}
             className="h-full bg-white"
             style={{ width: '0%' }}
           />
         </div>
-        
+
         <div className="flex justify-between items-center">
           <span className="text-white text-xs uppercase tracking-widest">Loading</span>
           <span className="text-white text-xs uppercase tracking-widest">{progress}%</span>
         </div>
-        
+
         <div ref={dotsRef} className="flex justify-center gap-2 mt-6">
           {[...Array(3)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="w-2 h-2 bg-white rounded-full opacity-30"
               style={{

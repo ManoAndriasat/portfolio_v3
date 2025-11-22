@@ -171,7 +171,7 @@ export default function Home() {
     //Stacking skills
     const skills = gsap.utils.toArray(".skill");
     const isMobile = window.innerWidth < 768;
-    const spacer = isMobile ? 80 : 190;
+    const spacer = isMobile ? 70 : 190;
     const duration = isMobile ? 180 : 320;
 
     skills.forEach((skill, index) => {
@@ -219,8 +219,8 @@ export default function Home() {
         <SecondHeader landingRef={landingRef} aboutRef={aboutRef} workRef={workRef} skillsRef={skillsRef} contactRef={contactRef} />
         <section id='landing' ref={landingRef} className='landing text-[#f9f9f9] h-screen' >
           <FirstHeader landingRef={landingRef} aboutRef={aboutRef} workRef={workRef} skillsRef={skillsRef} contactRef={contactRef} />
-          <div className="simple-word lg:pl-[35%] lg:pr-[15%] lg:mt-0 mx-5 lg:mx-0">
-            <p className="leading-none text-[5vw]">
+          <div className="simple-word lg:pl-[35%] lg:pr-[15%] mx-5 lg:mx-0">
+            <p className="leading-none text-[55px] lg:text-[5vw]">
               {`THINGS THAT YOU ARE NOT PROUD OF SHOULDN'T BE SIGNED BY YOUR NAME.`
                 .split(" ")
                 .map((word, index) => (
@@ -229,10 +229,10 @@ export default function Home() {
                   </span>
                 ))}
             </p>
-            <p ref={miniBannerRef} className='font-sans mini-banner text-[12px] lg:text-[14px]'>Show your worth through your work.</p>
+            <p ref={miniBannerRef} className='font-sans mini-banner text-[14px] lg:text-[14px]'>Show your worth through your work.</p>
           </div>
 
-          <div className="foot grid grid-cols-12 text-[12px] lg:text-[14px]">
+          <div className="foot grid grid-cols-12 text-[14px] lg:text-[14px]">
             <span className='pl-0 lg:pl-2 word col-span-8 lg:col-span-10 pr-2 description' metadata-text="A developer who builds with design in mind." name="description">
               A developer who builds with design in mind.</span>
             <span className="year col-span-4 lg:col-span-2 pl-2">Mano Andriasat</span>
@@ -243,8 +243,8 @@ export default function Home() {
           <div className="about">
             <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
             <div className="about-details px-[5%] text-[#1c1b19]">
-              <h1 ref={aboutTitleRef} className='text-[4em] lg:text-[6em] text-weight-[bold]'>About.</h1>
-              <p ref={textRef} className='description about-reveal text-[2.1em] lg:text-[4em] leading-none' name="description">
+              <h1 ref={aboutTitleRef} className='text-[55px] lg:text-[6em] text-weight-[bold]'>About.</h1>
+              <p ref={textRef} className='description about-reveal text-[34px] lg:text-[4em] leading-none' name="description">
                 I&apos;m Andriasatarintsoa Manohisoa, 21 years old, living in Antananarivo, Madagascar. I&apos;ve been studying application development at IT
                 University Andoharanofotsy since 2021. I enjoy working on projects that help me learn more about coding, problem-solving,
                 and design. I also like solving problems on LeetCode to improve my skills in algorithms and logic. Below are some of the projects I&apos;ve worked on.</p>
@@ -258,12 +258,12 @@ export default function Home() {
         <section id='work' ref={workRef} className="bg-[#1c1b19] work z-10 min-h-screen">
           <ModifHr left={10} text={"Some of my work that might interest you."} right={75} color={'#f9f9f9'} />
           <div>
-            <h1 ref={workTitleRef} className='text-[4em] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-10 pt-10 lg:pt-0 leading-none'>Work.</h1>
+            <h1 ref={workTitleRef} className='text-[55px] lg:text-[6em] text-weight-[bold] text-[#f9f9f9] px-[5%] pb-10 pt-10 lg:pt-0 leading-none'>Work.</h1>
             {Cards.map((card, index) => (
               <div key={index} className={`work-details work-${index} flex items-center justify-between`}>
                 <div>
-                  <p className={`work-name work-name-${index} text-[25px] lg:text-[38px] pt-[10px] lg:py-[30px]`}>{card.name}</p>
-                  <div className={`work-content work-content-${index} text-[18px] lg:text-[25px] gap-5 p-5`}>
+                  <p className={`work-name work-name-${index} text-[21px] lg:text-[38px] pt-[10px] lg:py-[30px]`}>{card.name}</p>
+                  <div className={`work-content work-content-${index} text-[16px] lg:text-[25px] gap-5 p-5`}>
                     <p>{card.details}</p>
                     <ul>
                       <li>
@@ -276,7 +276,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className='ml-5 p-5 lg:p-10 work-link text-white'>
-                  <a href={`${card.link}`} target='blank' className='text-decoration-[none] text-[20px] lg:text-[25px]'> <FaExternalLinkAlt /></a>
+                  <a href={`${card.link}`} target='blank' className='text-decoration-[none] text-[18px] lg:text-[25px]'> <FaExternalLinkAlt /></a>
                 </div>
               </div>
             ))}
@@ -298,13 +298,13 @@ export default function Home() {
                 className="skill h-content lg:h-[60vh] p-5 lg:px-10"
                 style={{ backgroundColor: skill.bgColor }}
               >
-                <p className='text-[30px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase pb-5 lg:pb-7'>
+                <p className='text-[34px] lg:text-[6em] text-[#1c1b19] font-extrabold uppercase pb-5 lg:pb-7'>
                   {skill.name}
                 </p>
-                <p className="skill-description leading-none text-[18px] lg:text-[30px]">
+                <p className="skill-description leading-none text-[16px] lg:text-[30px]">
                   {skill.details}
                 </p>
-                <div className="text-[18px] lg:text-[30px]">
+                <div className="text-[16px] lg:text-[30px]">
                   <ul className='language inline-flex gap-5 py-10 flex-wrap'>
                     {skill.languages.map((lang, i) => (
                       <li key={i}>{lang}</li>
@@ -336,16 +336,16 @@ export default function Home() {
           <div className='py-[3%]'>
             <div className='flex justify-between items-center'>
               <div className="pl-[5%]">
-                <p className='font-extrabold text-[18px] lg:text-[5em]'>Mano.</p>
-                <p className='font-bold text-[18px]'>© 2025.</p>
+                <p className='font-extrabold text-[21px] lg:text-[5em]'>Mano.</p>
+                <p className='font-bold text-[16px]'>© 2025.</p>
               </div>
               <div className='pr-[5%] text-right flex flex-col items-end'>
-                <ul className='flex gap-5 text-[18px] lg:text-[30px] justify-end'>
+                <ul className='flex gap-5 text-[16px] lg:text-[30px] justify-end'>
                   <li>
                     <a href="mailto:ma.andriasat@gmail.com" className="font-bold">+261 33 733 51</a>
                   </li>
                 </ul>
-                <ul className='inline-flex items-center gap-5 text-[18px] lg:text-[30px] justify-end'>
+                <ul className='inline-flex items-center gap-5 text-[16px] lg:text-[30px] justify-end'>
                   <li className='mt-1'>
                     <FaArrowRight ref={rightArrowRight} />
                   </li>
@@ -362,7 +362,7 @@ export default function Home() {
 
         <footer className="block lg:hidden text-[#1c1b19] border-none">
           <div className='flex justify-center items-center border-none p-5 bg-[#f9f9f9]'>
-            <ul className='text-[30px] inline-flex gap-5'>
+            <ul className='text-[21px] inline-flex gap-5'>
               <li><a href="https://www.facebook.com/mano.andriasat"><FaSquareFacebook /></a></li>
               <li><a href="https://www.linkedin.com/in/manohisoa-andriasatarintsoa-5894a1304/"> <FaLinkedin /></a></li>
               <li><a href="https://github.com/ManoAndriasat"><FaSquareGithub /></a></li>
