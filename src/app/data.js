@@ -36,7 +36,7 @@ const Cards = [
     name: "Datamart Design and Dashboard Development",
     details: "Design of a datamart (a specialized data storage system). Automatic data extraction from a data warehouse (DHIS2) to our datamart via an ETL process. Development of an online dashboard and data analysis tools for a government program (PARN).",
     participants: "Solo project",
-    techno: "Django Rest Framework - React - DHIS2 - PostgreSQL - scikit_learn",
+    techno: "Django Rest Framework - React - DHIS2 - PostgreSQL",
     society: "Project Coordination Unit",
     link: "none",
     date: "JUN - OCT 2024"
@@ -69,7 +69,7 @@ const Cards = [
     name: "Android App - Car Sales Management",
     details: "Mobile app for managing the sales of used cars, registering client and vehicle details.",
     participants: "Group of 4 (100% contribution to mobile interface & deployment)",
-    techno: "Ionic React",
+    techno: "Java, Ionic React",
     society: "School",
     link: "https://drive.google.com/file/d/1AlMbnATO4C2aezuQ2OzbaDKpsmK8SJGD/view"
   },
@@ -77,7 +77,7 @@ const Cards = [
     name: "Used Car Sales Website",
     details: "Website dedicated to selling used cars with advanced filters to simplify the search process. (We use a free server to host the backend, so the free quota may run out.)",
     participants: "Group of 4 (95% contribution to frontend)",
-    techno: "React",
+    techno: "Java - React",
     society: "School",
     link: "https://varotravam.netlify.app/"
   },

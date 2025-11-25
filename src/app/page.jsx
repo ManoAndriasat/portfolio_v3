@@ -199,11 +199,22 @@ export default function Home() {
         start: `top-=${contentHeight * index} 35%`,
         end: `bottom-=${contentHeight * (index + 1)} 35%`,
         onToggle: (self) => {
+          const isMobile = window.innerWidth < 768;
+          const marginReduction = isMobile ? "-10px" : "-50px";
+
           if (self.isActive) {
-            gsap.set([workContent], { opacity: 1, display: "block" });
+            gsap.set([workContent], {
+              opacity: 1,
+              display: "block",
+              marginTop: marginReduction // ← -5px sur mobile, -20px sur desktop
+            });
             gsap.set([work, workTitle, workLink], { backgroundColor: "#f9f9f9", color: "#1c1b19" });
           } else {
-            gsap.set([workContent], { opacity: 0, display: "none" });
+            gsap.set([workContent], {
+              opacity: 0,
+              display: "none",
+              marginTop: "0px" // ← Remet l'espace normal
+            });
             gsap.set([work, workTitle, workLink], { backgroundColor: "#1c1b19", color: "#f9f9f9" });
           }
         },
@@ -239,7 +250,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id='about' ref={aboutRef} className="main min-h-[100vh] bg-[#f9f9f9]">
+        <section id='about' ref={aboutRef} className="main min-h-[100vh] ">
           <div className="about">
             <ModifHr left={10} text={"Get to know me better."} right={80} color={'black'} />
             <div className="about-details px-[5%] text-[#1c1b19]">
